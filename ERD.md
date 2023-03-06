@@ -15,20 +15,28 @@
 	}
 }%%
 erDiagram
-    USER ||--|| ACCOUNT : creates
-    USER {
-	    string username PK
-	    string password
-    }
-    ACCOUNT }|--o{ PLAN : creates
+    ACCOUNT ||--o{ PLAN : creates
     ACCOUNT }|--o{ WORKOUT : "creates and contains"
     ACCOUNT {
 	    int id PK
-	    string username FK
+	    string username(Unique)
+		string password 
+		string oauth FK
 	    string goals
 	    array workout FK
 	    array plan FK
+		array tacker FK
     }
+	TRACKER ||--|| WORKOUT : has
+	TRACKER {
+		int id PK
+		int workout FK
+		string goal
+		int actual
+		int sets
+		string reps
+		string duration
+	}
     PLAN }|--o{ WORKOUT : contains
     PLAN {
 	    int id PK
@@ -41,11 +49,16 @@ erDiagram
 	    int id PK
 	    int account FK
 	    int plan FK
-	    string name
+		int tracker FK
+	    string name 
 	    string description
+		int sets
+		string reps
+		string duration
 	    boolean active
         boolean archive
 	    boolean privacy
+	
     }
 
 ```
