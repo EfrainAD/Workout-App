@@ -27,7 +27,7 @@ erDiagram
 	    array plan FK
 		array tacker FK
     }
-	TRACKER ||--|| WORKOUT : has
+	TRACKER |o--|| WORKOUT : has
 	TRACKER {
 		int id PK
 		int workout FK
