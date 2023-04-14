@@ -48,6 +48,7 @@ erDiagram
 		string name
 		boolean public
 		boolean tracker_public
+		boolean archive
 		array workout FK
 	}
     WORKOUT {
