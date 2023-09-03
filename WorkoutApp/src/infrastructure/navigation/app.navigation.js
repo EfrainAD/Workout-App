@@ -1,11 +1,12 @@
 import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-import { Text } from 'react-native'
+import { Text, View } from 'react-native'
 import { SafeArea } from './../../components/utilities/safeArea.component'
 import { Ionicons } from '@expo/vector-icons'
 import { FontAwesome5 } from '@expo/vector-icons'
 import { theme } from './../theme'
+import DashboardMain from '../../components/utilities/dashboard/DashboardMain'
 
 const Tab = createBottomTabNavigator()
 
@@ -49,11 +50,11 @@ function WorkoutsScreen() {
 }
 function DashboardScreen() {
    return (
-      <SafeArea
-         style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}
-      >
-         <Text style={{ fontSize: theme.fontSizes.h2 }}>Dashboard!</Text>
-      </SafeArea>
+      <>
+         <SafeArea>
+            <DashboardMain></DashboardMain>
+         </SafeArea>
+      </>
    )
 }
 function AccountScreen() {
