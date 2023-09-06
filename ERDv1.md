@@ -2,12 +2,12 @@
 
 ```mermaid
 	erDiagram
-		USER ||--o{ WORKOUT : creates
+		USER ||--o{ EXERCISE : creates
 		USER ||--o{ CHALLENGE : create
 		USER ||--o| FITNESS_GOAL : create
 		USER ||--o| EQUIPMENT : create
 		USER ||--o| SETTINGS : create
-		USER ||--o{ WORKOUT_SESSION : creates
+		USER ||--o{ WORKOUT : creates
 		USER ||--o{ WORKOUT_PROGRAM : creates
 		USER {
 			int id PK
@@ -20,17 +20,17 @@
 			int user FK
 			boolean darkmode
 		}
-		WORKOUT_PROGRAM }o--o{ WORKOUT_SESSION : create
+		WORKOUT_PROGRAM }o--o{ WORKOUT : create
 		WORKOUT_PROGRAM {
 			int id PK
 			int user FK
 			string name
 			string description
 		}
-		WORKOUT_SESSION }o--o{ WORKOUT : creates
-		WORKOUT_SESSION ||--o{ SESSION_LOG : creates
-		WORKOUT_SESSION ||--|| SCHEDULE : creates
-		WORKOUT_SESSION {
+		WORKOUT }o--o{ EXERCISE : creates
+		WORKOUT ||--o{ WORKOUT_LOG : creates
+		WORKOUT ||--|| SCHEDULE : creates
+		WORKOUT {
 			int id PK
 			int user FK
 			string name
@@ -38,8 +38,8 @@
 			string level
 			interval duration
 		}
-		WORKOUT_Template ||--o{ WORKOUT : create
-		WORKOUT_Template {
+		EXERCISE_TEMPLATE ||--o{ EXERCISE : create
+		EXERCISE_TEMPLATE {
 			int id PK
 			int user FK
 			string name
@@ -47,20 +47,20 @@
 			string description
 			int equipment FK
 		}
-		WORKOUT ||--o{ WORKOUT_LOG : create
-		WORKOUT {
+		EXERCISE ||--o{ EXERCISE_LOG : create
+		EXERCISE {
 			int id PK
 			int user FK
-			int workout_template FK
+			int exercise_template FK
 			int sets_goal
 			string reps_goal
 			interval duration_goal
 			boolean archive
 		}
-			WORKOUT_LOG {
+			EXERCISE_LOG {
 			int id PK
 			int user FK
-			int workout FK
+			int exercise FK
 			string weights_unit
 			int weight
 			int sets
@@ -69,7 +69,7 @@
 			double duration
 			date date
 		}
-		SESSION_LOG {
+		WORKOUT_LOG {
 			int id PK
 			interval duration
 			date date
