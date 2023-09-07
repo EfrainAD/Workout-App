@@ -6,6 +6,7 @@ import { SafeArea } from './../../components/utilities/safeArea.component'
 import { Ionicons } from '@expo/vector-icons'
 import { FontAwesome5 } from '@expo/vector-icons'
 import { theme } from './../theme'
+import AddWorkoutExample from '../../services/api/addWorkoutExample.screen'
 
 const Tab = createBottomTabNavigator()
 
@@ -82,7 +83,7 @@ export const AppNavigator = () => {
       <NavigationContainer>
          <Tab.Navigator screenOptions={screenOptions}>
             <Tab.Screen name="Stats" component={StatsScreen} />
-            <Tab.Screen name="Workouts" component={WorkoutsScreen} />
+            <Tab.Screen name="Workouts" component={AddWorkoutExample} />
             <Tab.Screen name="Dashboard" component={DashboardScreen} />
             <Tab.Screen name="Account" component={AccountScreen} />
          </Tab.Navigator>
