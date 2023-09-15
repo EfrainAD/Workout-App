@@ -2,13 +2,13 @@
 
 ```mermaid
 	erDiagram
-		USER ||--o{ WORKOUT : creates
+		USER ||--o{ EXERCISE : creates
 		USER ||--o{ CHALLENGE : create
 		USER ||--o{ GOAL : create
 		USER ||--o| EQUIPMENT : create
 		USER ||--o| FITNESS_GOAL : create
 		USER ||--o| SETTINGS : create
-		USER ||--o{ WORKOUT_SESSION : creates
+		USER ||--o{ WORKOUT : creates
 		USER ||--o{ WORKOUT_PROGRAM : creates
 		USER {
 			int id PK
@@ -26,17 +26,17 @@
 			int user FK
 			string name
 		}
-		WORKOUT_PROGRAM }o--o{ WORKOUT_SESSION : create
+		WORKOUT_PROGRAM }o--o{ WORKOUT : create
 		WORKOUT_PROGRAM {
 			int id PK
 			int user FK
 			string name
 			string description
 		}
-		WORKOUT_SESSION }o--o{ WORKOUT : creates
-		WORKOUT_SESSION ||--o{ SESSION_LOG : creates
-		WORKOUT_SESSION ||--|| SCHEDULE : creates
-		WORKOUT_SESSION {
+		WORKOUT }o--o{ EXERCISE : creates
+		WORKOUT ||--o{ WORKOUT_LOG : creates
+		WORKOUT ||--|| WORKOUT_SCHEDULE : creates
+		WORKOUT {
 			int id PK
 			int user FK
 			string name
@@ -44,9 +44,9 @@
 			string level
 			interval duration
 		}
-		WORKOUT_Template ||--o{ WORKOUT : create
-		WORKOUT_Template }o--o{ EQUIPMENT : create
-		WORKOUT_Template {
+		EXERCISE_TEMPLATE ||--o{ EXERCISE : create
+		EXERCISE_TEMPLATE }o--o{ EQUIPMENT : create
+		EXERCISE_TEMPLATE {
 			int id PK
 			int user FK
 			string name
@@ -54,34 +54,36 @@
 			string description
 			int equipment FK
 		}
-		WORKOUT ||--o{ WORKOUT_LOG : create
-		WORKOUT {
+		EXERCISE ||--o{ EXERCISE_LOG : create
+		EXERCISE {
 			int id PK
 			int user FK
-			int workout_template FK
+			int exercise_template FK
 			int sets_goal
 			string reps_goal
 			interval duration_goal
 			boolean archive
 		}
-			WORKOUT_LOG {
+			EXERCISE_LOG {
 			int id PK
 			int user FK
-			int workout FK
+			int exercise FK
 			string weights_unit
 			int weight
 			int sets
 			interval duration
 			date date
 		}
-		SESSION_LOG {
+		WORKOUT_LOG {
 			int id PK
 			interval duration
 			date date
 		}
-		SCHEDULE {
+		WORKOUT_SCHEDULE ||--o{ CUSTOM_DATE : create
+		WORKOUT_SCHEDULE {
 			int id PK
 			int owner FK
+			boolean custom
 			boolean sunday
 			boolean monday
 			boolean tuesday
@@ -89,6 +91,12 @@
 			boolean thursday
 			boolean friday
 			boolean saturday
+		}
+		CUSTOM_DATE{
+			int id PK
+			int owner FK
+			int workout_schedule FK
+			date date
 		}
 		FITNESS_GOAL {
 			int id PK
