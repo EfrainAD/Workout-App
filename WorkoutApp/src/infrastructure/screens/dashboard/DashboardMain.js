@@ -3,8 +3,6 @@ import { Text, View, ScrollView } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
 import { Feather } from '@expo/vector-icons'
 import { MaterialIcons } from '@expo/vector-icons';
-// Install LinearGradient: 
-    //  npx expo install expo-linear-gradient
 import { LinearGradient } from 'expo-linear-gradient';
 
 const DashboardMain = () => {
@@ -25,7 +23,7 @@ const DashboardMain = () => {
                     size={24} 
                     color="black" />
                 <Text style={{color: '#F7F7F7', fontSize: 24, fontWeight: 600}}>
-                    Dashboard</Text>
+                    Dashboardd</Text>
                 <Ionicons 
                     style={{color: '#F7F7F7'}}
                     name="settings-outline"

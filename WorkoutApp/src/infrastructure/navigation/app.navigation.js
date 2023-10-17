@@ -6,7 +6,7 @@ import { SafeArea } from './../../components/utilities/safeArea.component'
 import { Ionicons } from '@expo/vector-icons'
 import { FontAwesome5 } from '@expo/vector-icons'
 import { theme } from './../theme'
-import DashboardMain from '../../components/utilities/dashboard/DashboardMain'
+import DashboardMain from '../../infrastructure/screens/dashboard/DashboardMain'
 
 const Tab = createBottomTabNavigator()
 
