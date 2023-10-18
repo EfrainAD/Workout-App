@@ -105,7 +105,7 @@ const AddWorkoutExample = () => {
          </View>
 
          <Button
-            title="DROP DB TAble"
+            title="DROP DB TABLE"
             onPress={() => {
                dropWorkoutTemplateTable()
                setLists(null)
