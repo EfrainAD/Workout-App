@@ -7,6 +7,24 @@ import { Ionicons } from '@expo/vector-icons'
 import { FontAwesome5 } from '@expo/vector-icons'
 import { theme } from './../theme'
 import AddWorkoutExample from '../../services/api/addWorkoutExample.screen'
+import WorkoutsScreen from '../../screens/workout/workouts.screens'
+import UserExercisesScreen from '../../screens/exercise/userExercises.screen'
+import ExercisesScreen from '../../screens/exercise/exercises.screens'
+import ExerciseInfoScreen from '../../screens/exercise/exerciseInfo.screen'
+import AccountScreen from '../../screens/account/account.screen'
+import StatsScreen from '../../screens/stats/stats.screen'
+import UserWorkoutsScreen from '../../screens/workout/userWorkouts.screen'
+import AddChallengeScreen from '../../screens/challenge/addChallenge.screen'
+import AddGoalScreen from '../../screens/goal/addGoal.screen'
+import AddExerciseScreen from '../../screens/exercise/addExercise.screen'
+import AddWorkoutScreen from '../../screens/workout/addWorkout.screen'
+import ChangePasswordScreen from '../../screens/account/changePassword.screen copy 2'
+import DeleteAccountScreen from '../../screens/account/deleteAccount.screen'
+import FeedbackScreen from '../../screens/account/feedback.screen'
+import HelpScreen from '../../screens/account/help.screen'
+import NotificationsScreen from '../../screens/account/notifications.screen'
+import SecurityScreen from '../../screens/account/security.screen'
+import ChategoryScreen from '../../screens/trophy/userTrophy.screen'
 
 const Tab = createBottomTabNavigator()
 
@@ -26,43 +44,34 @@ const TAB_ICONS = {
 }
 
 // Temps, until they are actoually name..
-function StatsScreen() {
-   return (
-      <SafeArea
-         style={{
-            flex: 1,
-            justifyContent: 'center',
-            alignItems: 'center',
-         }}
-      >
-         <Text style={{ fontSize: theme.fontSizes.h2 }}>Stats!</Text>
-      </SafeArea>
-   )
-}
-function WorkoutsScreen() {
-   return (
-      <SafeArea
-         style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}
-      >
-         <Text style={{ fontSize: theme.fontSizes.h2 }}>Workouts!</Text>
-      </SafeArea>
-   )
-}
+// function StatsScreen() {
+//    return (
+//       <SafeArea
+//          style={{
+//             flex: 1,
+//             justifyContent: 'center',
+//             alignItems: 'center',
+//          }}
+//       >
+//          <Text style={{ fontSize: theme.fontSizes.h2 }}>Stats!</Text>
+//       </SafeArea>
+//    )
+// }
+// function WorkoutsScreen() {
+//    return (
+//       <SafeArea
+//          style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}
+//       >
+//          <Text style={{ fontSize: theme.fontSizes.h2 }}>Workouts!</Text>
+//       </SafeArea>
+//    )
+// }
 function DashboardScreen() {
    return (
       <SafeArea
          style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}
       >
          <Text style={{ fontSize: theme.fontSizes.h2 }}>Dashboard!</Text>
-      </SafeArea>
-   )
-}
-function AccountScreen() {
-   return (
-      <SafeArea
-         style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}
-      >
-         <Text style={{ fontSize: theme.fontSizes.h2 }}>Account!</Text>
       </SafeArea>
    )
 }
