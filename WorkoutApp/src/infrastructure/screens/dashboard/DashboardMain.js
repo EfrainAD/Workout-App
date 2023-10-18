@@ -27,7 +27,7 @@ const DashboardMain = () => {
                color="black"
             />
             <Text style={{ color: '#F7F7F7', fontSize: 24, fontWeight: 600 }}>
-               Dashboardd
+               Dashboard
             </Text>
             <Ionicons
                style={{ color: '#F7F7F7' }}
