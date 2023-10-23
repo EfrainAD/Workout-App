@@ -34,7 +34,7 @@ export const colors = {
       // error: '#D0421B',
       // success: '#138000',
    },
-   bg: {
+   background: {
       neutral: neutral,
    },
    progress: {
