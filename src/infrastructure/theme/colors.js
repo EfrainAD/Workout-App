@@ -37,6 +37,12 @@ export const colors = {
    bg: {
       neutral: neutral,
    },
+   progress: {
+      start: '#46D61A',
+      middle: '#C7F3BA',
+      end: '#D9D9D900'
+      // end: 'rgba(217, 217, 217, 0.00)'
+   },
    calendar: {
       current: {
          // "#FF6E00" is a vivid shade of orange. It is a warm and energetic color often associated with attributes such as enthusiasm, creativity, and warmth
@@ -52,6 +58,7 @@ export const colors = {
       // secondary: secondary,
       // lavender
       tertiary: tertiary[0],
+      lavender: tertiary[0],
       orange: tertiary[1],
       // "#F7F7F7" is a very light gray
       neutral: '#F7F7F7',
