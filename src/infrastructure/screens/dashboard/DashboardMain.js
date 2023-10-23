@@ -4,11 +4,12 @@ import { Ionicons } from '@expo/vector-icons'
 import { Feather } from '@expo/vector-icons'
 import { MaterialIcons } from '@expo/vector-icons'
 import { LinearGradient } from 'expo-linear-gradient'
+import { theme } from '../../theme'
 
 const DashboardMain = () => {
    return (
       // Dashboard Title
-      <View style={{ flex: 1, backgroundColor: '#3B3B3B' }}>
+      <View style={{ flex: 1, backgroundColor: theme.colors.bg.neutral[0] }}>
          <View
             style={{
                flexDirection: 'row',
@@ -21,24 +22,22 @@ const DashboardMain = () => {
             }}
          >
             <Ionicons
-               style={{ color: '#F7F7F7', fontWeight: 600 }}
+               style={{ color: theme.colors.icon.neutral, fontWeight: 600 }}
                name="ios-arrow-back"
                size={24}
-               color="black"
             />
-            <Text style={{ color: '#F7F7F7', fontSize: 24, fontWeight: 600 }}>
+            <Text style={{ color: theme.colors.text.neutral, fontSize: 24, fontWeight: 600 }}>
                Dashboard
             </Text>
             <Ionicons
-               style={{ color: '#F7F7F7' }}
+               style={{ color: theme.colors.icon.neutral }}
                name="settings-outline"
                size={24}
-               color="white"
             />
          </View>
          {/* Calendar */}
          <ScrollView>
-            <View style={{ backgroundColor: '#474747' }}>
+            <View style={{ backgroundColor: theme.colors.bg.neutral[2] }}>
                <View
                   style={{
                      flexDirection: 'row',
@@ -50,7 +49,7 @@ const DashboardMain = () => {
                >
                   <Text
                      style={{
-                        color: '#F7F7F7',
+                        color: theme.colors.text.neutral,
                         alignSelf: 'center',
                         fontSize: 16,
                         fontWeight: 600,
@@ -63,7 +62,7 @@ const DashboardMain = () => {
                      style={{ alignSelf: 'center' }}
                      name="calendar"
                      size={24}
-                     color="#B080FF"
+                     color= {theme.colors.icon.tertiary}
                   />
                </View>
                {/* Days of Week */}
@@ -81,7 +80,7 @@ const DashboardMain = () => {
                         height: 80,
                         borderWidth: 2,
                         borderColor: '#A5A5A5',
-                        backgroundColor: '#2E2E2E',
+                        backgroundColor: theme.colors.calendar.noWorkout,
                         borderRadius: 20,
                         alignItems: 'center',
                         justifyContent: 'space-evenly',
@@ -89,7 +88,7 @@ const DashboardMain = () => {
                   >
                      <Text
                         style={{
-                           color: '#F7F7F7',
+                           color: theme.colors.text.neutral,
                            fontSize: 16,
                            fontWeight: 600,
                            padding: 5,
@@ -99,20 +98,20 @@ const DashboardMain = () => {
                      </Text>
                      <Text
                         style={{
-                           color: '#F7F7F7',
+                           color: theme.colors.text.neutral,
                            fontSize: 16,
                            fontWeight: 600,
                         }}
                      >
-                        4
+                        3
                      </Text>
                   </View>
                   <View
                      style={{
                         height: 80,
                         borderWidth: 2,
-                        borderColor: '#A5A5A5',
-                        backgroundColor: '#B080FF',
+                        borderColor: theme.colors.borders.neutral,
+                        backgroundColor: theme.colors.calendar.pastWorkout,
                         borderRadius: 20,
                         alignItems: 'center',
                         justifyContent: 'space-evenly',
@@ -120,7 +119,7 @@ const DashboardMain = () => {
                   >
                      <Text
                         style={{
-                           color: '#F7F7F7',
+                           color: theme.colors.text.neutral,
                            fontSize: 16,
                            fontWeight: 600,
                            padding: 5,
@@ -130,7 +129,7 @@ const DashboardMain = () => {
                      </Text>
                      <Text
                         style={{
-                           color: '#F7F7F7',
+                           color: theme.colors.text.neutral,
                            fontSize: 16,
                            fontWeight: 600,
                         }}
@@ -142,8 +141,8 @@ const DashboardMain = () => {
                      style={{
                         height: 80,
                         borderWidth: 2,
-                        borderColor: '#A5A5A5',
-                        backgroundColor: '#2E2E2E',
+                        borderColor: theme.colors.borders.neutral,
+                        backgroundColor: theme.colors.calendar.noWorkout,
                         borderRadius: 20,
                         alignItems: 'center',
                         justifyContent: 'space-evenly',
@@ -151,7 +150,7 @@ const DashboardMain = () => {
                   >
                      <Text
                         style={{
-                           color: '#F7F7F7',
+                           color: theme.colors.text.neutral,
                            fontSize: 16,
                            fontWeight: 600,
                            padding: 5,
@@ -161,7 +160,7 @@ const DashboardMain = () => {
                      </Text>
                      <Text
                         style={{
-                           color: '#F7F7F7',
+                           color: theme.colors.text.neutral,
                            fontSize: 16,
                            fontWeight: 600,
                         }}
@@ -173,8 +172,8 @@ const DashboardMain = () => {
                      style={{
                         height: 80,
                         borderWidth: 2,
-                        borderColor: '#A5A5A5',
-                        backgroundColor: '#B080FF',
+                        borderColor: theme.colors.borders.neutral,
+                        backgroundColor: theme.colors.calendar.pastWorkout,
                         borderRadius: 20,
                         alignItems: 'center',
                         justifyContent: 'space-evenly',
@@ -182,7 +181,7 @@ const DashboardMain = () => {
                   >
                      <Text
                         style={{
-                           color: '#F7F7F7',
+                           color: theme.colors.text.neutral,
                            fontSize: 16,
                            fontWeight: 600,
                            padding: 5,
@@ -192,7 +191,7 @@ const DashboardMain = () => {
                      </Text>
                      <Text
                         style={{
-                           color: '#F7F7F7',
+                           color: theme.colors.text.neutral,
                            fontSize: 16,
                            fontWeight: 600,
                         }}
@@ -204,8 +203,8 @@ const DashboardMain = () => {
                      style={{
                         height: 80,
                         borderWidth: 2,
-                        borderColor: '#A5A5A5',
-                        backgroundColor: '#FF6E00',
+                        borderColor: theme.colors.borders.neutral,
+                        backgroundColor: theme.colors.calendar.current.workout,
                         borderRadius: 20,
                         alignItems: 'center',
                         justifyContent: 'space-evenly',
@@ -213,7 +212,7 @@ const DashboardMain = () => {
                   >
                      <Text
                         style={{
-                           color: '#F7F7F7',
+                           color: theme.colors.text.neutral,
                            fontSize: 16,
                            fontWeight: 600,
                            padding: 5,
@@ -223,7 +222,7 @@ const DashboardMain = () => {
                      </Text>
                      <Text
                         style={{
-                           color: '#F7F7F7',
+                           color: theme.colors.text.neutral,
                            fontSize: 16,
                            fontWeight: 600,
                         }}
@@ -235,8 +234,8 @@ const DashboardMain = () => {
                      style={{
                         height: 80,
                         borderWidth: 2,
-                        borderColor: '#A5A5A5',
-                        backgroundColor: '#2E2E2E',
+                        borderColor: theme.colors.borders.neutral,
+                        backgroundColor: theme.colors.calendar.noWorkout,
                         borderRadius: 20,
                         alignItems: 'center',
                         justifyContent: 'space-evenly',
@@ -244,30 +243,30 @@ const DashboardMain = () => {
                   >
                      <Text
                         style={{
-                           color: '#F7F7F7',
+                           color: theme.colors.text.neutral,
                            fontSize: 16,
                            fontWeight: 600,
                            padding: 5,
                         }}
                      >
-                        SUN
+                        FRI
                      </Text>
                      <Text
                         style={{
-                           color: '#F7F7F7',
+                           color: theme.colors.text.neutral,
                            fontSize: 16,
                            fontWeight: 600,
                         }}
                      >
-                        4
+                        8
                      </Text>
                   </View>
                   <View
                      style={{
                         height: 80,
                         borderWidth: 2,
-                        borderColor: '#A5A5A5',
-                        backgroundColor: '#2E2E2E',
+                        borderColor: theme.colors.borders.neutral,
+                        backgroundColor: theme.colors.calendar.noWorkout,
                         borderRadius: 20,
                         alignItems: 'center',
                         justifyContent: 'space-evenly',
@@ -275,22 +274,22 @@ const DashboardMain = () => {
                   >
                      <Text
                         style={{
-                           color: '#F7F7F7',
+                           color: theme.colors.text.neutral,
                            fontSize: 16,
                            fontWeight: 600,
                            padding: 5,
                         }}
                      >
-                        SUN
+                        SAT
                      </Text>
                      <Text
                         style={{
-                           color: '#F7F7F7',
+                           color: theme.colors.text.neutral,
                            fontSize: 16,
                            fontWeight: 600,
                         }}
                      >
-                        4
+                        9
                      </Text>
                   </View>
                </View>
@@ -307,10 +306,10 @@ const DashboardMain = () => {
                   paddingBottom: 20,
                }}
             >
-               <Text style={{ color: '#FFF', fontSize: 20, fontWeight: 600 }}>
+               <Text style={{ color: theme.colors.text.neutral, fontSize: 20, fontWeight: 600 }}>
                   Current
                </Text>
-               <Ionicons name="add" size={30} color="#FF9346" />
+               <Ionicons name="add" size={30} color= {theme.colors.icon.orange} />
             </View>
             {/* Current Cards */}
             <View
