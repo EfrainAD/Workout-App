@@ -19,20 +19,8 @@ const neutral = [
 
 
 export const colors = {
-   // brand: {
-   //    primary: '#2182BD',
-   //    secondary: '#5282BD',
-   //    muted: '#C6DAF7',
-   // },
    ui: {
-      // primary: '#262626',
-      // secondary: 'green',
       secondary: '#757575',
-      // tertiary: '#F1F1F1',
-      // quaternary: '#FFFFFF',
-      // disabled: '#DEDEDE',
-      // error: '#D0421B',
-      // success: '#138000',
    },
    background: {
       neutral: neutral,
@@ -41,7 +29,6 @@ export const colors = {
       start: '#46D61A',
       middle: '#C7F3BA',
       end: '#D9D9D900'
-      // end: 'rgba(217, 217, 217, 0.00)'
    },
    calendar: {
       current: {
@@ -54,23 +41,13 @@ export const colors = {
    },
 
    icon: {
-      // primary: '#FF6E00',
-      // secondary: secondary,
-      // lavender
-      tertiary: tertiary[0],
+      tertiary: tertiary[0], // Lavender
       lavender: tertiary[0],
       orange: tertiary[1],
-      // "#F7F7F7" is a very light gray
-      neutral: '#F7F7F7',
+      neutral: '#F7F7F7', // Very light gray
    },
    text: {
       neutral: '#F7F7F7',
-      // primary: '#262626',
-      // secondary: '#757575',
-      // disabled: '#9C9C9C',
-      // inverse: '#FFFFFF',
-      // error: '#D0421B',
-      // success: '#138000',
    },
    borders: {
       neutral: '#A5A5A5'

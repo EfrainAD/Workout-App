@@ -5,12 +5,11 @@ import { Feather } from '@expo/vector-icons'
 import { MaterialIcons } from '@expo/vector-icons'
 import { LinearGradient } from 'expo-linear-gradient'
 import { theme } from '../../theme'
-import { colors } from '../../theme/colors'
 
 const DashboardMain = () => {
    return (
       // Dashboard Title
-      <View style={{ flex: 1, backgroundColor: theme.colors.bg.neutral[0] }}>
+      <View style={{ flex: 1, backgroundColor: theme.colors.background.neutral[0] }}>
          <View
             style={{
                flexDirection: 'row',
@@ -38,7 +37,7 @@ const DashboardMain = () => {
          </View>
          {/* Calendar */}
          <ScrollView>
-            <View style={{ backgroundColor: theme.colors.bg.neutral[2] }}>
+            <View style={{ backgroundColor: theme.colors.background.neutral[2] }}>
                <View
                   style={{
                      flexDirection: 'row',
@@ -315,7 +314,7 @@ const DashboardMain = () => {
             {/* Current Cards */}
             <View
                style={{
-                  backgroundColor:theme.colors.bg.neutral[2],
+                  backgroundColor:theme.colors.background.neutral[2],
                   margin: 10,
                   marginLeft: 6,
                   borderWidth: 1,
@@ -380,7 +379,7 @@ const DashboardMain = () => {
             {/* Current Cards */}
             <View
                style={{
-                  backgroundColor: theme.colors.bg.neutral[2],
+                  backgroundColor: theme.colors.background.neutral[2],
                   color: theme.colors.text.neutral,
                   margin: 10,
                   marginLeft: 6,
@@ -475,7 +474,7 @@ const DashboardMain = () => {
             {/* Goal Cards */}
             <View
                style={{
-                  backgroundColor: theme.colors.bg.neutral[2],
+                  backgroundColor: theme.colors.background.neutral[2],
                   margin: 6,
                   marginLeft: 6,
                   borderRadius: 20,
@@ -561,7 +560,7 @@ const DashboardMain = () => {
                            alignSelf: 'center',
                            borderWidth: 1,
                            borderColor: theme.colors.borders.neutral,
-                           backgroundColor: theme.colors.bg.neutral[0],
+                           backgroundColor: theme.colors.background.neutral[0],
                            textAlign: 'center',
                            padding: 5,
                            paddingLeft: 10,
@@ -579,7 +578,7 @@ const DashboardMain = () => {
                         borderWidth: 1,
                         borderColor: theme.colors.borders.neutral,
                         borderRadius: 100,
-                        backgroundColor: theme.colors.bg.neutral[0],
+                        backgroundColor: theme.colors.background.neutral[0],
                      }}
                   >
                      <Ionicons name="add" size={25} color={theme.colors.text.neutral} />
@@ -606,7 +605,7 @@ const DashboardMain = () => {
             {/* Challenges Cards */}
             <View
                style={{
-                  backgroundColor: theme.colors.bg.neutral[2],
+                  backgroundColor: theme.colors.background.neutral[2],
                   margin: 6,
                   marginLeft: 6,
                   borderRadius: 20,
@@ -692,7 +691,7 @@ const DashboardMain = () => {
                         borderWidth: 1,
                         borderColor: theme.colors.borders.neutral,
                         borderRadius: 100,
-                        backgroundColor: theme.colors.bg.neutral[2],
+                        backgroundColor: theme.colors.background.neutral[2],
                      }}
                   >
                      <Ionicons name="remove" size={25} color={theme.colors.text.neutral} />
@@ -703,7 +702,7 @@ const DashboardMain = () => {
                         borderWidth: 1,
                         borderColor: theme.colors.borders.neutral,
                         borderRadius: 100,
-                        backgroundColor: theme.colors.bg.neutral[0],
+                        backgroundColor: theme.colors.background.neutral[0],
                      }}
                   >
                      <Ionicons name="add" size={25} color={theme.colors.text.neutral} />
@@ -712,7 +711,7 @@ const DashboardMain = () => {
             </View>
             <View
                style={{
-                  backgroundColor: theme.colors.bg.neutral[2],
+                  backgroundColor: theme.colors.background.neutral[2],
                   margin: 6,
                   marginLeft: 6,
                   borderWidth: 1,
@@ -799,7 +798,7 @@ const DashboardMain = () => {
                         borderWidth: 1,
                         borderColor: theme.colors.borders.neutral,
                         borderRadius: 100,
-                        backgroundColor: theme.colors.bg.neutral[2],
+                        backgroundColor: theme.colors.background.neutral[2],
                      }}
                   >
                      <Ionicons name="remove" size={25} color={theme.colors.text.neutral} />
@@ -810,7 +809,7 @@ const DashboardMain = () => {
                         borderWidth: 1,
                         borderColor: theme.colors.borders.neutral,
                         borderRadius: 100,
-                        backgroundColor: theme.colors.bg.neutral[2],
+                        backgroundColor: theme.colors.background.neutral[2],
                      }}
                   >
                      <Ionicons name="add" size={25} color={theme.colors.text.neutral} />
