@@ -6,6 +6,7 @@ import { LinearGradient } from 'expo-linear-gradient'
 import { theme } from '../../infrastructure/theme'
 import Header from '../../components/section/Header'
 import Calendar from '../../components/dashboard/Calendar'
+import GoalsCard from '../../components/goals/GoalsCard'
 const DashboardMain = () => {
    return (
       // Dashboard Title
@@ -190,7 +191,8 @@ const DashboardMain = () => {
                <Ionicons name="add" size={30} color={theme.colors.icon.orange} />
             </View>
             {/* Goal Cards */}
-            <View
+            <GoalsCard/>
+            {/* <View
                style={{
                   backgroundColor: theme.colors.background.neutral[2],
                   margin: 6,
@@ -302,7 +304,7 @@ const DashboardMain = () => {
                      <Ionicons name="add" size={25} color={theme.colors.text.neutral} />
                   </View>
                </View>
-            </View>
+            </View> */}
             {/* Challenges */}
             <View
                style={{
