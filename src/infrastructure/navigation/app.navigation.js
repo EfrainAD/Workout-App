@@ -7,7 +7,7 @@ import { Ionicons } from '@expo/vector-icons'
 import { FontAwesome5 } from '@expo/vector-icons'
 import { theme } from './../theme'
 
-import DashboardMain from '../../infrastructure/screens/dashboard/DashboardMain'
+import DashboardMain from '../../screens/dashboard/DashboardMain'
 import AddWorkoutExample from '../../services/api/addWorkoutExample.screen'
 import WorkoutsScreen from '../../screens/workout/workouts.screens'
 import UserExercisesScreen from '../../screens/exercise/userExercises.screen'
