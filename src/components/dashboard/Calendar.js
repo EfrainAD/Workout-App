@@ -40,7 +40,7 @@ const CalendarDay = ({ day, date, backgroundColor }) => {
 };
 
 const Calendar = (props) => {
-  const daysOfWeek = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
+  const daysOfWeek = ['SUN', 'MON', 'TUE', 'WED', 'THU', ' FRI ', 'SAT'];
 
   const currentDate = new Date();
   const currentDayIndex = currentDate.getDay(); // 0 for Sunday, 1 for Monday, ..., 6 for Saturday
