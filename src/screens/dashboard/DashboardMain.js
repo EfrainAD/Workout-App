@@ -378,6 +378,7 @@ const DashboardMain = () => {
                      Description of 40 characters
                   </Text>
                </View>
+
                <View
                   style={{
                      paddingTop: 10,
@@ -428,6 +429,7 @@ const DashboardMain = () => {
                      <Ionicons name="add" size={25} color={theme.colors.text.neutral} />
                   </View>
                </View>
+               
             </View>
             <View
                style={{
