@@ -1,8 +1,7 @@
 import { Text, View } from 'react-native'
-// import { Ionicons } from '@expo/vector-icons'
 import { theme } from '../../infrastructure/theme'
-// import { LinearGradient } from 'expo-linear-gradient'
 import ProgressBar from '../card/ProgressBar'
+import SectionHeader from '../screen/SectionHeader';
 
 const WorkoutCard = ({ title, workoutName, description }) => {
   return (
@@ -66,18 +65,20 @@ const WorkoutCard = ({ title, workoutName, description }) => {
 };
 
 const ChallengesCards = (props) => {
-    const workoutData = [
-      { title: '30 day Streak', workoutName: 'Workout 1', description: 'Description 1' },
-      { title: '60 day Streak', workoutName: 'Workout 2', description: 'Description 2' },
-      // Add more workout data as needed
-    ];
-    return (
-        <View>
-            {workoutData.map((workout, index) => (
-              <WorkoutCard key={index} {...workout} />
-            ))}
-        </View>
-    )
+  const title = props.title
+  const workoutData = [
+    { title: '30 day Streak', workoutName: 'Workout 1', description: 'Description 1' },
+    { title: '60 day Streak', workoutName: 'Workout 2', description: 'Description 2' },
+    // Add more workout data as needed
+  ];
+  return (
+      <View>
+        <SectionHeader title={title}/>
+          {workoutData.map((workout, index) => (
+            <WorkoutCard key={index} {...workout} />
+          ))}
+      </View>
+  )
 }
 
 export default ChallengesCards

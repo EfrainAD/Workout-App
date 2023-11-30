@@ -1,7 +1,8 @@
-import { Text, View, ScrollView } from 'react-native'
+import { Text, View } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
 import { theme } from '../../infrastructure/theme'
 
+// Section Header
 const Header = (props) => {
    return (
          <View

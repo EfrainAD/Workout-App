@@ -3,7 +3,7 @@ import { Text, View } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
 import { theme } from '../../infrastructure/theme'
 
-const List = (props) => {
+const SectionHeader = (props) => {
    return (
       <View
       style={{
@@ -24,4 +24,4 @@ const List = (props) => {
    )
 }
 
-export default List
+export default SectionHeader

@@ -1,13 +1,14 @@
 import { Text, View } from 'react-native'
-import { Ionicons } from '@expo/vector-icons'
 import { theme } from '../../infrastructure/theme'
-import { LinearGradient } from 'expo-linear-gradient'
 import ProgressBar from '../card/ProgressBar'
+import SectionHeader from '../screen/SectionHeader'
 
 const GoalsCard = (props) => {
+    const title = props.title
+    
     return (
         <View>
-        {/* Goal Cards */}
+            <SectionHeader title={title} />
             <View
                 style={{
                     backgroundColor: theme.colors.background.neutral[2],

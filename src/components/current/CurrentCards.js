@@ -1,7 +1,7 @@
 import { Text, View } from 'react-native'
 import { theme } from '../../infrastructure/theme'
 import { MaterialIcons } from '@expo/vector-icons'
-
+import SectionHeader from '../screen/SectionHeader';
 
 const WorkoutCard = ({ title, difficulty, duration, days }) => {
   return (
@@ -73,13 +73,15 @@ const WorkoutCard = ({ title, difficulty, duration, days }) => {
 };
 
 const CurrentCards = (props) => {
+    const title = props.title
     const workoutData = [
       { title: 'The Ultimate upperbody', difficulty: 'begginer', duration: '15m 45sec', days: "MON, WED, FRI"},
       { title: 'The Ultimate upperbody', difficulty: 'expert', duration: '15m 45sec', days: "MON, WED, THR" },
     ];
 
     return (
-        <View>
+      <View>
+          <SectionHeader title={title}/>
             {workoutData.map((workout, index) => (
               <WorkoutCard key={index} {...workout} />
             ))}
