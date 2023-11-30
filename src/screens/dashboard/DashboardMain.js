@@ -5,7 +5,7 @@ import Header from '../../components/section/Header'
 import Calendar from '../../components/dashboard/Calendar'
 import GoalsCard from '../../components/goals/GoalsCard'
 import ChallengesCards from '../../components/challenges/ChallengesCards'
-import CurrentCards from '../../components/current/CurrentCards'
+import WorkoutList from '../../components/currentWorkouts/WorkoutList'
 import SectionHeader from '../../components/screen/SectionHeader'
 
 const DashboardMain = () => {
@@ -14,7 +14,7 @@ const DashboardMain = () => {
          <Header title="Dashboard"/>
          <ScrollView>
             <Calendar/>
-            <CurrentCards title="Current"/>
+            <WorkoutList title="Current"/>
             <GoalsCard title="Goals"/>
             <ChallengesCards title="Challenges"/>
          </ScrollView>
