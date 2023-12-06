@@ -6,7 +6,9 @@
       "start": "npx expo start",
       "android": "npx expo start --android",
       "ios": "npx expo start --ios",
-      "web": "npx expo start --web"
+      "web": "npx expo start --web",
+      "prettier:format": "prettier --write \"**/*.{ts,tsx,js,md,mdx,css,yaml}\"",
+      "prettier:check:ci": "prettier --check \"**/*.{ts,tsx,js,md,mdx,css,yaml}\""
    },
    "dependencies": {
       "@expo-google-fonts/lato": "^0.2.3",
