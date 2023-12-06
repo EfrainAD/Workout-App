@@ -1,7 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
 import { StyledView, TitleText, InfoContainer, DifficultyText, DurationContainer, DurationText, ArrowIcon, DaysText } from './WorkoutCard.styles';
-// import { StyledView } from './WorkoutCard.styles';
 import SectionHeader from '../screen/SectionHeader';
 import { theme } from '../../infrastructure/theme';
 

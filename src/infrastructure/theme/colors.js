@@ -3,7 +3,9 @@ const tertiary = [
 "#B080FF",
 
 // The color "#FF6E00" is a vivid shade of orange. It is a warm and energetic color often associated with attributes such as enthusiasm, creativity, and warmth
-"#FF9346"
+"#FF9346",
+
+"#FF6E00"
 ]
 const neutral = [
    "#2E2E2E",
@@ -43,7 +45,8 @@ export const colors = {
    icon: {
       tertiary: tertiary[0], // Lavender
       lavender: tertiary[0],
-      orange: tertiary[1],
+      // orange: tertiary[1],
+      orange: tertiary[2],
       neutral: '#F7F7F7', // Very light gray
    },
    text: {

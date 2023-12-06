@@ -1,22 +1,7 @@
-import { styled } from 'styled-components'
-import { theme } from '../theme'
-// import styled from 'styled-components/native';
+import styled from 'styled-components/native';
 import { Text, View } from 'react-native';
+import { theme } from '../../infrastructure/theme';
 import { MaterialIcons } from '@expo/vector-icons';
-
-export const CenteredView = styled.View`
-   flex: 1;
-   justify-content: center;
-   align-items: center;
-`
-
-export const H1 = styled.Text`
-   font-size: ${theme.fontSizes.h1};
-   font-weight: bold;
-`
-export const Body = styled.Text`
-   font-size: ${theme.fontSizes.body};
-`
 
 export const StyledView = styled(View)`
   background-color: ${theme.colors.background.neutral[2]};
