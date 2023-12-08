@@ -4,32 +4,38 @@ import { theme } from '../../infrastructure/theme'
 
 const Header = (props) => {
    return (
-         <View
+      <View
+         style={{
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            paddingLeft: 17,
+            paddingTop: 5,
+            paddingBottom: 20,
+            paddingRight: 17,
+         }}
+      >
+         <Ionicons
+            style={{ color: theme.colors.icon.neutral, fontWeight: 600 }}
+            name="ios-arrow-back"
+            size={24}
+         />
+         <Text
             style={{
-               flexDirection: 'row',
-               justifyContent: 'space-between',
-               alignItems: 'center',
-               paddingLeft: 17,
-               paddingTop: 5,
-               paddingBottom: 20,
-               paddingRight: 17,
+               color: theme.colors.text.neutral,
+               fontSize: 24,
+               fontWeight: 600,
             }}
          >
-            <Ionicons
-               style={{ color: theme.colors.icon.neutral, fontWeight: 600 }}
-               name="ios-arrow-back"
-               size={24}
-            />
-            <Text style={{ color: theme.colors.text.neutral, fontSize: 24, fontWeight: 600 }}>
-               {props.title}
-            </Text>
-            <Ionicons
-               style={{ color: theme.colors.icon.neutral }}
-               name="settings-outline"
-               size={24}
-            />
-         </View>)
-
+            {props.title}
+         </Text>
+         <Ionicons
+            style={{ color: theme.colors.icon.neutral }}
+            name="settings-outline"
+            size={24}
+         />
+      </View>
+   )
 }
 
 export default Header
