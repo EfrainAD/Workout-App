@@ -51,6 +51,7 @@ export const colors = {
    },
    text: {
       neutral: '#F7F7F7',
+      placeholder: '#A5A5A5',
    },
    borders: {
       neutral: '#A5A5A5',

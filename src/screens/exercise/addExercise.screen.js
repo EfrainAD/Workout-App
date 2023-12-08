@@ -1,4 +1,4 @@
-import { Text, View, TextInput, Button, Alert, ScrollView } from 'react-native'
+import { Text, View, TextInput, Button, ScrollView } from 'react-native'
 import { useForm, Controller } from 'react-hook-form'
 import { useEffect, useState } from 'react'
 import { theme } from '../../infrastructure/theme'
@@ -9,7 +9,12 @@ import {
    dropExerciseTable,
    getExercises,
 } from '../../services/api/exersice'
-import { CenteredView } from '../../infrastructure/styledComponents/styledComonents'
+import {
+   CenteredView,
+   RowView,
+   StyledView,
+} from '../../infrastructure/styledComponents/styledComonents'
+import Header from '../../components/section/Header'
 
 const AddExercise = () => {
    const [lists, setLists] = useState([])
@@ -43,30 +48,36 @@ const AddExercise = () => {
 
    return (
       <SafeArea>
-         <ScrollView>
-            <CenteredView>
-               <View style={{ padding: 30 }}>
-                  <Text style={{ fontSize: theme.fontSizes.h2 }}>
-                     Workouts!
-                  </Text>
-               </View>
-               <View>
-                  {/* DISPLAY DATA */}
-                  {lists.map((list, idx) => (
-                     <Text key={idx}>
-                        Name: {list.name} {'\n'}
-                        Level: {list.level} {'\n'}
-                        Description: {list.description} {'\n'}
-                        Sets Goal: {list.sets_goal} {'\n'}
-                        Reps Goal: {list.reps_goal} {'\n'}
-                        Duration Goal: {list.duration_goal} {'\n'}
-                        Archive: {list.archive ? 'Yes' : 'No'} {'\n'}
-                     </Text>
-                  ))}
+         <View
+            style={{
+               flex: 1,
+               backgroundColor: theme.colors.background.neutral[0],
+            }}
+         >
+            <Header title="Workouts!" />
+            <ScrollView>
+               {/* <CenteredView> */}
+               {/* <View> */}
+               {/* DISPLAY DATA */}
+               <ScrollView horizontal>
+                  <RowView>
+                     {lists.map((list, idx) => (
+                        <Text key={idx} style={{ color: 'white' }}>
+                           Name: {list.name} {'\n'}
+                           Level: {list.level} {'\n'}
+                           Description: {list.description} {'\n'}
+                           Sets Goal: {list.sets_goal} {'\n'}
+                           Reps Goal: {list.reps_goal} {'\n'}
+                           Duration Goal: {list.duration_goal} {'\n'}
+                           Archive: {list.archive ? 'Yes' : 'No'} {'\n'}
+                        </Text>
+                     ))}
+                  </RowView>
+               </ScrollView>
 
-                  {/* FORM */}
-
-                  {/*  Name */}
+               {/* FORM */}
+               {/*  Name */}
+               <StyledView>
                   <Controller
                      control={control}
                      rules={{
@@ -75,11 +86,14 @@ const AddExercise = () => {
                      render={({ field: { onChange, onBlur, value } }) => (
                         <TextInput
                            style={{
-                              fontSize: parseInt(
-                                 theme.fontSizes.body.slice(0, -2)
-                              ),
+                              color: theme.colors.text.neutral,
+                              fontSize: 18,
+                              fontWeight: '600',
+                              paddingBottom: 0,
+                              marginBottom: 0,
                            }}
                            placeholder="Name"
+                           placeholderTextColor={theme.colors.text.placeholder}
                            onBlur={onBlur}
                            onChangeText={onChange}
                            value={value}
@@ -87,9 +101,11 @@ const AddExercise = () => {
                      )}
                      name="name"
                   />
-                  {errors.name && <Text>This is required.</Text>}
+               </StyledView>
+               {errors.name && <Text>This is required.</Text>}
 
-                  {/* Level */}
+               {/* Level */}
+               <StyledView>
                   <Controller
                      control={control}
                      rules={{
@@ -98,11 +114,14 @@ const AddExercise = () => {
                      render={({ field: { onChange, onBlur, value } }) => (
                         <TextInput
                            style={{
-                              fontSize: parseInt(
-                                 theme.fontSizes.body.slice(0, -2)
-                              ),
+                              color: theme.colors.text.neutral,
+                              fontSize: 18,
+                              fontWeight: '600',
+                              paddingBottom: 0,
+                              marginBottom: 0,
                            }}
                            placeholder="Level"
+                           placeholderTextColor={theme.colors.text.placeholder}
                            onBlur={onBlur}
                            onChangeText={onChange}
                            value={value}
@@ -110,8 +129,10 @@ const AddExercise = () => {
                      )}
                      name="level"
                   />
+               </StyledView>
 
-                  {/* Sets Goal */}
+               {/* Sets Goal */}
+               <StyledView>
                   <Controller
                      control={control}
                      rules={{
@@ -121,11 +142,14 @@ const AddExercise = () => {
                      render={({ field: { onChange, onBlur, value } }) => (
                         <TextInput
                            style={{
-                              fontSize: parseInt(
-                                 theme.fontSizes.body.slice(0, -2)
-                              ),
+                              color: theme.colors.text.neutral,
+                              fontSize: 18,
+                              fontWeight: '600',
+                              paddingBottom: 0,
+                              marginBottom: 0,
                            }}
                            placeholder="Sets Goal"
+                           placeholderTextColor={theme.colors.text.placeholder}
                            keyboardType="numeric"
                            onBlur={onBlur}
                            onChangeText={onChange}
@@ -134,21 +158,26 @@ const AddExercise = () => {
                      )}
                      name="sets_goal"
                   />
-                  {errors.sets_goal && (
-                     <Text>Only numeric input is allowed for Sets Goal.</Text>
-                  )}
+               </StyledView>
+               {errors.sets_goal && (
+                  <Text>Only numeric input is allowed for Sets Goal.</Text>
+               )}
 
-                  {/* Reps Goal */}
+               {/* Reps Goal */}
+               <StyledView>
                   <Controller
                      control={control}
                      render={({ field: { onChange, onBlur, value } }) => (
                         <TextInput
                            style={{
-                              fontSize: parseInt(
-                                 theme.fontSizes.body.slice(0, -2)
-                              ),
+                              color: theme.colors.text.neutral,
+                              fontSize: 18,
+                              fontWeight: '600',
+                              paddingBottom: 0,
+                              marginBottom: 0,
                            }}
                            placeholder="Reps Goal"
+                           placeholderTextColor={theme.colors.text.placeholder}
                            onBlur={onBlur}
                            onChangeText={onChange}
                            value={value}
@@ -156,18 +185,23 @@ const AddExercise = () => {
                      )}
                      name="reps_goal"
                   />
+               </StyledView>
 
-                  {/* Duration Goal  */}
+               {/* Duration Goal  */}
+               <StyledView>
                   <Controller
                      control={control}
                      render={({ field: { onChange, onBlur, value } }) => (
                         <TextInput
                            style={{
-                              fontSize: parseInt(
-                                 theme.fontSizes.body.slice(0, -2)
-                              ),
+                              color: theme.colors.text.neutral,
+                              fontSize: 18,
+                              fontWeight: '600',
+                              paddingBottom: 0,
+                              marginBottom: 0,
                            }}
                            placeholder="Duration Goal (DD:HH:MM:SS)"
+                           placeholderTextColor={theme.colors.text.placeholder}
                            onBlur={onBlur}
                            onChangeText={onChange}
                            value={value}
@@ -175,18 +209,23 @@ const AddExercise = () => {
                      )}
                      name="duration_goal"
                   />
+               </StyledView>
 
-                  {/* Description */}
+               {/* Description */}
+               <StyledView>
                   <Controller
                      control={control}
                      render={({ field: { onChange, onBlur, value } }) => (
                         <TextInput
                            style={{
-                              fontSize: parseInt(
-                                 theme.fontSizes.body.slice(0, -2)
-                              ),
+                              color: theme.colors.text.neutral,
+                              fontSize: 18,
+                              fontWeight: '600',
+                              paddingBottom: 0,
+                              marginBottom: 0,
                            }}
                            placeholder="Description"
+                           placeholderTextColor={theme.colors.text.placeholder}
                            onBlur={onBlur}
                            onChangeText={onChange}
                            value={value}
@@ -194,9 +233,10 @@ const AddExercise = () => {
                      )}
                      name="description"
                   />
+               </StyledView>
 
-                  <Button title="Submit" onPress={handleSubmit(onSubmit)} />
-               </View>
+               <Button title="Submit" onPress={handleSubmit(onSubmit)} />
+               {/* </View> */}
 
                <Button
                   title="DROP DB TABLE"
@@ -205,8 +245,9 @@ const AddExercise = () => {
                      setLists([])
                   }}
                />
-            </CenteredView>
-         </ScrollView>
+               {/* </CenteredView> */}
+            </ScrollView>
+         </View>
       </SafeArea>
    )
 }
