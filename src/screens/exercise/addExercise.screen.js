@@ -15,6 +15,7 @@ import {
    StyledView,
 } from '../../infrastructure/styledComponents/styledComonents'
 import Header from '../../components/section/Header'
+import SelectLevelField from '../../components/screen/field/SelectLevelField'
 
 const AddExercise = () => {
    const [lists, setLists] = useState([])
@@ -54,7 +55,7 @@ const AddExercise = () => {
                backgroundColor: theme.colors.background.neutral[0],
             }}
          >
-            <Header title="Workouts!" />
+            <Header title="Add Exercise!" />
             <ScrollView>
                {/* <CenteredView> */}
                {/* <View> */}
@@ -112,20 +113,7 @@ const AddExercise = () => {
                         maxLength: 100,
                      }}
                      render={({ field: { onChange, onBlur, value } }) => (
-                        <TextInput
-                           style={{
-                              color: theme.colors.text.neutral,
-                              fontSize: 18,
-                              fontWeight: '600',
-                              paddingBottom: 0,
-                              marginBottom: 0,
-                           }}
-                           placeholder="Level"
-                           placeholderTextColor={theme.colors.text.placeholder}
-                           onBlur={onBlur}
-                           onChangeText={onChange}
-                           value={value}
-                        />
+                        <SelectLevelField onChange={onChange} value={value} />
                      )}
                      name="level"
                   />
