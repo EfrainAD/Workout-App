@@ -12,6 +12,7 @@ import {
 import {
    CenteredView,
    RowView,
+   StyledDropdown,
    StyledView,
 } from '../../infrastructure/styledComponents/styledComonents'
 import Header from '../../components/section/Header'
@@ -106,7 +107,7 @@ const AddExercise = () => {
                {errors.name && <Text>This is required.</Text>}
 
                {/* Level */}
-               <StyledView>
+               <StyledDropdown>
                   <Controller
                      control={control}
                      rules={{
@@ -117,7 +118,7 @@ const AddExercise = () => {
                      )}
                      name="level"
                   />
-               </StyledView>
+               </StyledDropdown>
 
                {/* Sets Goal */}
                <StyledView>

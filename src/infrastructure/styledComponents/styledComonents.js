@@ -18,6 +18,16 @@ export const Body = styled.Text`
    font-size: ${theme.fontSizes.body};
 `
 
+export const StyledDropdown = styled(View)`
+   background-color: ${theme.colors.background.neutral[2]};
+   margin: 5px;
+   margin-left: 8px;
+   border-radius: 20px;
+   border-width: 1px;
+   border-color: ${theme.colors.borders.neutral};
+   padding: 5px 10px 5px 20px;
+`
+
 export const StyledView = styled(View)`
    background-color: ${theme.colors.background.neutral[2]};
    margin: 5px;

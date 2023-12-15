@@ -4,12 +4,12 @@ export function createExerciseTable() {
    db.transaction(
       (tx) => {
          tx.executeSql(
-            'CREATE TABLE IF NOT EXISTS Exercise (id INTEGER PRIMARY KEY NOT NULL, name TEXT, level TEXT, description TEXT, sets_goal INTEGER, reps_goal TEXT, duration_goal TEXT, archive INTEGER DEFAULT 0);'
+            'CREATE TABLE IF NOT EXISTS Exercise (id INTEGER PRIMARY KEY NOT NULL, name TEXT, level TEXT, description TEXT, sets_goal INTEGER, reps_goal TEXT, duration_goal TEXT, archive INTEGER DEFAULT 0);',
          )
       },
       (error) => {
          console.log(error)
-      }
+      },
    )
 }
 
@@ -21,7 +21,7 @@ export function dropExerciseTable() {
       (error) => {
          console.log(error)
       },
-      () => createExerciseTable()
+      () => createExerciseTable(),
    )
 }
 
@@ -48,7 +48,7 @@ export function addExercise(data, setLists) {
                reps_goal,
                duration_goal,
                archive ? 1 : 0,
-            ]
+            ],
          )
          tx.executeSql('select * from Exercise', [], (_, { rows }) => {
             const allRows = rows._array
@@ -58,7 +58,7 @@ export function addExercise(data, setLists) {
       },
       (error) => {
          console.log(error)
-      }
+      },
    )
 }
 
@@ -75,6 +75,6 @@ export const getExercises = (setExercises, setErrors) => {
             setErrors(error)
          }
          console.log(error)
-      }
+      },
    )
 }
