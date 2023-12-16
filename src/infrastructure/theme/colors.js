@@ -41,19 +41,26 @@ export const colors = {
       pastWorkout: tertiary[0],
       noWorkout: '#2E2E2E',
    },
-
    icon: {
       tertiary: tertiary[0], // Lavender
       lavender: tertiary[0],
       // orange: tertiary[1],
       orange: tertiary[2],
       neutral: '#F7F7F7', // Very light gray
+      dropdown: {
+         arrowIcon: tertiary[2],
+      },
    },
    text: {
       neutral: '#F7F7F7',
-      placeholder: '#A5A5A5',
+      placeholder: neutral[3],
+      dropdown: {
+         placeholder: neutral[2],
+         placeholderValue: neutral[3],
+         notSelected: tertiary[0],
+      },
    },
    borders: {
-      neutral: '#A5A5A5',
+      neutral: neutral[3],
    },
 }

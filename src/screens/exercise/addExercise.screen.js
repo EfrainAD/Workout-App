@@ -28,7 +28,7 @@ const AddExercise = () => {
    } = useForm({
       defaultValues: {
          name: '',
-         level: '',
+         level: 'Beginner',
          description: '',
          sets_goal: null, // int
          reps_goal: '',
@@ -107,18 +107,16 @@ const AddExercise = () => {
                {errors.name && <Text>This is required.</Text>}
 
                {/* Level */}
-               <StyledDropdown>
-                  <Controller
-                     control={control}
-                     rules={{
-                        maxLength: 100,
-                     }}
-                     render={({ field: { onChange, onBlur, value } }) => (
-                        <SelectLevelField onChange={onChange} value={value} />
-                     )}
-                     name="level"
-                  />
-               </StyledDropdown>
+               <Controller
+                  control={control}
+                  rules={{
+                     maxLength: 100,
+                  }}
+                  render={({ field: { onChange, onBlur, value } }) => (
+                     <SelectLevelField onChange={onChange} value={value} />
+                  )}
+                  name="level"
+               />
 
                {/* Sets Goal */}
                <StyledView>
