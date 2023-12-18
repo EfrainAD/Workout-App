@@ -19,7 +19,7 @@ export default function App() {
    return (
       <>
          <ThemeProvider theme={theme}>
-            <SafeArea >
+            <SafeArea>
                <Navigator />
             </SafeArea>
          </ThemeProvider>
