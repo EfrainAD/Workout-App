@@ -12,20 +12,20 @@ import SectionHeader from '../../components/screen/SectionHeader'
 const DashboardMain = () => {
    return (
       // <SafeArea>
-         <View
-            style={{
-               flex: 1,
-               backgroundColor: theme.colors.background.neutral[0],
-            }}
-         >
-            {/* <Header title="Dashboard" /> */}
-            <ScrollView>
-               <Calendar />
-               <WorkoutList title="Current" />
-               <GoalsCard title="Goals" />
-               <ChallengesCards title="Challenges" />
-            </ScrollView>
-         </View>
+      <View
+         style={{
+            flex: 1,
+            backgroundColor: theme.colors.background.neutral[0],
+         }}
+      >
+         {/* <Header title="Dashboard" /> */}
+         <ScrollView>
+            <Calendar />
+            <WorkoutList title="Current" />
+            <GoalsCard title="Goals" />
+            <ChallengesCards title="Challenges" />
+         </ScrollView>
+      </View>
       // </SafeArea>
    )
 }

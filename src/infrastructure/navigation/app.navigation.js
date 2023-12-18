@@ -55,63 +55,71 @@ const screenOptions = ({ route }) => ({
    },
    tabBarActiveTintColor: theme.colors.ui.primary,
    tabBarInactiveTintColor: theme.colors.ui.secondary,
-   headerShown: false
+   headerShown: false,
 })
 
-const headerOptions = () => 
-({
+const headerOptions = () => ({
    headerShown: true,
    headerStyle: {
-      backgroundColor: theme.colors.background.neutral[0], 
-      borderBottomColor: "transparent",
-      borderBottomWidth: 0, 
+      backgroundColor: theme.colors.background.neutral[0],
+      borderBottomColor: 'transparent',
+      borderBottomWidth: 0,
       shadowColor: 'transparent',
-      elevation: 0
+      elevation: 0,
    },
    headerTitleStyle: {
       color: theme.colors.text.neutral, // Set your desired text color
-fontSize: 24,
-fontWeight: 600,
+      fontSize: 24,
+      fontWeight: 600,
    },
-   headerRight: () => 
+   headerRight: () => (
       <Ionicons
-         style={{ 
-            color: theme.colors.icon.neutral ,
+         style={{
+            color: theme.colors.icon.neutral,
             paddingRight: 17,
          }}
          name="settings-outline"
          size={24}
-      />,
-   headerLeft: () => 
-         <Ionicons
-            style={{ 
-               color: theme.colors.icon.neutral, 
-               fontWeight: 600,
-               paddingLeft: 17,
-               paddingTop: 5,
-               paddingBottom: 20,
-            }}
-            name="ios-arrow-back"
-            size={24}
-         />
-   })
-
+      />
+   ),
+   headerLeft: () => (
+      <Ionicons
+         style={{
+            color: theme.colors.icon.neutral,
+            fontWeight: 600,
+            paddingLeft: 17,
+            paddingTop: 5,
+            paddingBottom: 20,
+         }}
+         name="ios-arrow-back"
+         size={24}
+      />
+   ),
+})
 
 export const AppNavigator = () => {
    return (
       <NavigationContainer>
          <Tab.Navigator screenOptions={screenOptions}>
-            <Tab.Screen name="Stats" component={StatsScreen} options={headerOptions}/>
-            <Tab.Screen name="Workouts" component={AddWorkoutExample} options={headerOptions}/>
+            <Tab.Screen
+               name="Stats"
+               component={StatsScreen}
+               options={headerOptions}
+            />
+            <Tab.Screen
+               name="Workouts"
+               component={AddWorkoutExample}
+               options={headerOptions}
+            />
             <Tab.Screen
                name="Dashboard"
                component={DashboardMain}
                options={headerOptions}
-               />
+            />
 
-            <Tab.Screen 
-               name="Account" 
-               component={AccountScreen} 
+            <Tab.Screen
+               name="Account"
+               component={AccountScreen}
                options={headerOptions}
             />
          </Tab.Navigator>
