@@ -10,19 +10,18 @@ import Header from '../../components/section/Header'
 
 const AccountScreen = () => {
    return (
-      <SafeArea>
          <View
             style={{
                flex: 1,
                backgroundColor: theme.colors.background.neutral[0],
             }}
          >
-            <Header title="Account" />
+            {/* <Header title="Account" /> */}
             <ScrollView>
                <List />
             </ScrollView>
          </View>
-      </SafeArea>
+      // </SafeArea>
    )
 }
 
