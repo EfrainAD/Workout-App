@@ -22,7 +22,7 @@ export default function App() {
          <ThemeProvider theme={theme}>
             <Navigator />
          </ThemeProvider>
-         <ExpoStatusBar style="light"/>
+         <ExpoStatusBar style="light" />
       </>
    )
 }
