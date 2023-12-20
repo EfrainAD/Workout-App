@@ -1,6 +1,5 @@
 import React from 'react'
 import { View } from 'react-native'
-// import { StyledView, RowView, TitleText, ArrowIcon, SectionView} from './ListCards.styles';
 import {
    StyledView,
    RowView,
@@ -26,7 +25,6 @@ const ButtonCard = ({ title }) => {
 }
 
 const List = (props) => {
-   // const title = props.title;
    const exerciseButtons = [
       { title: 'Edit Exercises' },
       { title: 'Edit Categories' },
