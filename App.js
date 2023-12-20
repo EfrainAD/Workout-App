@@ -9,6 +9,8 @@ import {
 import { useFonts as useLato, Lato_400Regular } from '@expo-google-fonts/lato'
 import { StatusBar } from 'react-native'
 import { Navigator } from './src/infrastructure/navigation'
+import { SafeArea } from './src/components/utilities/safeArea.component'
+import { SafeAreaView } from 'react-native-safe-area-context'
 
 export default function App() {
    const [oswaldLoaded] = useOswald({ Oswald_400Regular })
@@ -20,8 +22,8 @@ export default function App() {
          <ThemeProvider theme={theme}>
             <Navigator />
          </ThemeProvider>
-         <ExpoStatusBar style="auto" barStyle="light-content" />
-         <StatusBar barStyle="light-content" translucent={false} />
+         <ExpoStatusBar style="light"/>
+
       </>
    )
 }
