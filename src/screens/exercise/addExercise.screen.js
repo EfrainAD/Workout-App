@@ -16,7 +16,7 @@ import {
    StyledView,
 } from '../../infrastructure/styledComponents/styledComonents'
 import Header from '../../components/section/Header'
-import SelectLevelField from '../../components/screen/field/SelectLevelField'
+import SelectLevelField from '../../components/screen/field/SelectLevelField/SelectLevelField'
 
 const AddExercise = () => {
    const [lists, setLists] = useState([])
