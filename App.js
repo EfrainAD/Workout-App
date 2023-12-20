@@ -1,6 +1,5 @@
 import React from 'react'
 import { StatusBar as ExpoStatusBar } from 'expo-status-bar'
-
 import { ThemeProvider } from 'styled-components/native'
 import { theme } from './src/infrastructure/theme'
 import {
@@ -8,9 +7,10 @@ import {
    Oswald_400Regular,
 } from '@expo-google-fonts/oswald'
 import { useFonts as useLato, Lato_400Regular } from '@expo-google-fonts/lato'
-
+import { StatusBar } from 'react-native'
 import { Navigator } from './src/infrastructure/navigation'
-import { Text } from 'react-native'
+import { SafeArea } from './src/components/utilities/safeArea.component'
+import { SafeAreaView } from 'react-native-safe-area-context'
 
 export default function App() {
    const [oswaldLoaded] = useOswald({ Oswald_400Regular })
@@ -22,7 +22,7 @@ export default function App() {
          <ThemeProvider theme={theme}>
             <Navigator />
          </ThemeProvider>
-         <ExpoStatusBar style="auto" />
+         <ExpoStatusBar style="light" />
       </>
    )
 }

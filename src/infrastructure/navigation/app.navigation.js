@@ -1,32 +1,16 @@
 import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-import { Text, View } from 'react-native'
-import { SafeArea } from './../../components/utilities/safeArea.component'
+
 import { Ionicons } from '@expo/vector-icons'
 import { FontAwesome5 } from '@expo/vector-icons'
 import { theme } from './../theme'
 
 import DashboardMain from '../../screens/dashboard/DashboardMain'
 import AddWorkoutExample from '../../services/api/addWorkoutExample.screen'
-import WorkoutsScreen from '../../screens/workout/workouts.screens'
-import UserExercisesScreen from '../../screens/exercise/userExercises.screen'
-import ExercisesScreen from '../../screens/exercise/exercises.screens'
-import ExerciseInfoScreen from '../../screens/exercise/exerciseInfo.screen'
+
 import AccountScreen from '../../screens/account/account.screen'
 import StatsScreen from '../../screens/stats/stats.screen'
-import UserWorkoutsScreen from '../../screens/workout/userWorkouts.screen'
-import AddChallengeScreen from '../../screens/challenge/addChallenge.screen'
-import AddGoalScreen from '../../screens/goal/addGoal.screen'
-import AddExerciseScreen from '../../screens/exercise/addExercise.screen'
-import AddWorkoutScreen from '../../screens/workout/addWorkout.screen'
-import ChangePasswordScreen from '../../screens/account/changePassword.screen copy 2'
-import DeleteAccountScreen from '../../screens/account/deleteAccount.screen'
-import FeedbackScreen from '../../screens/account/feedback.screen'
-import HelpScreen from '../../screens/account/help.screen'
-import NotificationsScreen from '../../screens/account/notifications.screen'
-import SecurityScreen from '../../screens/account/security.screen'
-import ChategoryScreen from '../../screens/trophy/userTrophy.screen'
 
 const Tab = createBottomTabNavigator()
 
@@ -45,39 +29,6 @@ const TAB_ICONS = {
    ),
 }
 
-// Temps, until they are actoually name..
-// function StatsScreen() {
-//    return (
-//       <SafeArea
-//          style={{
-//             flex: 1,
-//             justifyContent: 'center',
-//             alignItems: 'center',
-//          }}
-//       >
-//          <Text style={{ fontSize: theme.fontSizes.h2 }}>Stats!</Text>
-//       </SafeArea>
-//    )
-// }
-// function WorkoutsScreen() {
-//    return (
-//       <SafeArea
-//          style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}
-//       >
-//          <Text style={{ fontSize: theme.fontSizes.h2 }}>Workouts!</Text>
-//       </SafeArea>
-//    )
-// }
-function DashboardScreen() {
-   return (
-      <>
-         <SafeArea>
-            <DashboardMain></DashboardMain>
-         </SafeArea>
-      </>
-   )
-}
-
 const screenOptions = ({ route }) => ({
    tabBarIcon: ({ color, size }) => {
       const iconRenderer = TAB_ICONS[route.name]
@@ -89,14 +40,70 @@ const screenOptions = ({ route }) => ({
    headerShown: false,
 })
 
+const headerOptions = () => ({
+   headerShown: true,
+   headerStyle: {
+      backgroundColor: theme.colors.background.neutral[0],
+      borderBottomColor: 'transparent',
+      borderBottomWidth: 0,
+      shadowColor: 'transparent',
+      elevation: 0,
+   },
+   headerTitleStyle: {
+      color: theme.colors.text.neutral, // Set your desired text color
+      fontSize: 24,
+      fontWeight: 600,
+   },
+   headerRight: () => (
+      <Ionicons
+         style={{
+            color: theme.colors.icon.neutral,
+            paddingRight: 17,
+         }}
+         name="settings-outline"
+         size={24}
+      />
+   ),
+   headerLeft: () => (
+      <Ionicons
+         style={{
+            color: theme.colors.icon.neutral,
+            fontWeight: 600,
+            paddingLeft: 17,
+            paddingTop: 5,
+            paddingBottom: 20,
+         }}
+         name="ios-arrow-back"
+         size={24}
+      />
+   ),
+})
+
 export const AppNavigator = () => {
    return (
       <NavigationContainer>
          <Tab.Navigator screenOptions={screenOptions}>
-            <Tab.Screen name="Stats" component={StatsScreen} />
-            <Tab.Screen name="Workouts" component={AddWorkoutExample} />
-            <Tab.Screen name="Dashboard" component={DashboardScreen} />
-            <Tab.Screen name="Account" component={AccountScreen} />
+            <Tab.Screen
+               name="Stats"
+               component={StatsScreen}
+               options={headerOptions}
+            />
+            <Tab.Screen
+               name="Workouts"
+               component={AddWorkoutExample}
+               options={headerOptions}
+            />
+            <Tab.Screen
+               name="Dashboard"
+               component={DashboardMain}
+               options={headerOptions}
+            />
+
+            <Tab.Screen
+               name="Account"
+               component={AccountScreen}
+               options={headerOptions}
+            />
          </Tab.Navigator>
       </NavigationContainer>
    )
