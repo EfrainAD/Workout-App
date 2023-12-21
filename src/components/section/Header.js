@@ -27,7 +27,7 @@ const Header = (props) => {
                fontWeight: 600,
             }}
          >
-            {props.title}
+            {props.title} 
          </Text>
          <Ionicons
             style={{ color: theme.colors.icon.neutral }}

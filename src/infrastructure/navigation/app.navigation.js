@@ -11,6 +11,7 @@ import AddWorkoutExample from '../../services/api/addWorkoutExample.screen'
 
 import AccountScreen from '../../screens/account/account.screen'
 import StatsScreen from '../../screens/stats/stats.screen'
+import Settings from '../../components/settings/Settings.Screen'
 
 const Tab = createBottomTabNavigator()
 
@@ -101,7 +102,7 @@ export const AppNavigator = () => {
 
             <Tab.Screen
                name="Account"
-               component={AccountScreen}
+               component={Settings}
                options={headerOptions}
             />
          </Tab.Navigator>
