@@ -17,6 +17,7 @@ import {
 } from '../../infrastructure/styledComponents/styledComonents'
 import Header from '../../components/section/Header'
 import SelectLevelField from '../../components/screen/field/SelectLevelField/SelectLevelField'
+import DurationField from '../../components/screen/field/DurationField/DurationField'
 
 const AddExercise = () => {
    const [lists, setLists] = useState([])
@@ -178,17 +179,9 @@ const AddExercise = () => {
                   <Controller
                      control={control}
                      render={({ field: { onChange, onBlur, value } }) => (
-                        <TextInput
-                           style={{
-                              color: theme.colors.text.neutral,
-                              fontSize: 18,
-                              fontWeight: '600',
-                              paddingBottom: 0,
-                              marginBottom: 0,
-                           }}
-                           placeholder="Duration Goal (DD:HH:MM:SS)"
-                           placeholderTextColor={theme.colors.text.placeholder}
+                        <DurationField
                            onBlur={onBlur}
+                           onChange={onChange}
                            onChangeText={onChange}
                            value={value}
                         />

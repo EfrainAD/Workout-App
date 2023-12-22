@@ -1,11 +1,15 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 import WheelPicker from './WheelPicker'
 
-const DurationField = () => {
+const DurationField = ({ onChange }) => {
    const [days, setDays] = useState(0)
    const [hours, setHours] = useState(0)
    const [minutes, setMinutes] = useState(0)
+
+   useEffect(() => {
+      onChange(`${days}:${hours}:${minutes}`)
+   }, [days, hours, minutes])
 
    return (
       <View style={styles.container}>
