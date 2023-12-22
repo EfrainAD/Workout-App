@@ -7,10 +7,10 @@ import { FontAwesome5 } from '@expo/vector-icons'
 import { theme } from './../theme'
 
 import DashboardMain from '../../screens/dashboard/DashboardMain'
-import AddWorkoutExample from '../../services/api/addWorkoutExample.screen'
 
 import AccountScreen from '../../screens/account/account.screen'
 import StatsScreen from '../../screens/stats/stats.screen'
+import AddExercise from '../../screens/exercise/addExercise.screen'
 
 const Tab = createBottomTabNavigator()
 
@@ -18,7 +18,7 @@ const TAB_ICONS = {
    Stats: (size, color) => (
       <Ionicons name="stats-chart" size={size} color={color} />
    ),
-   Workouts: (size, color) => (
+   AddExercise: (size, color) => (
       <FontAwesome5 name="dumbbell" size={size} color={color} />
    ),
    Dashboard: (size, color) => (
@@ -40,7 +40,8 @@ const screenOptions = ({ route }) => ({
    headerShown: false,
 })
 
-const headerOptions = () => ({
+const headerOptions = ({ headerTitle }) => ({
+   headerTitle,
    headerShown: true,
    headerStyle: {
       backgroundColor: theme.colors.background.neutral[0],
@@ -89,9 +90,9 @@ export const AppNavigator = () => {
                options={headerOptions}
             />
             <Tab.Screen
-               name="Workouts"
-               component={AddWorkoutExample}
-               options={headerOptions}
+               name="AddExercise"
+               component={AddExercise}
+               options={headerOptions({ headerTitle: 'Add Exercise' })}
             />
             <Tab.Screen
                name="Dashboard"

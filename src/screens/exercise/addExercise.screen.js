@@ -56,7 +56,6 @@ const AddExercise = () => {
                backgroundColor: theme.colors.background.neutral[0],
             }}
          >
-            <Header title="Add Exercise!" />
             <ScrollView>
                {/* <CenteredView> */}
                {/* <View> */}
