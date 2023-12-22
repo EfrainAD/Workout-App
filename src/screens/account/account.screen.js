@@ -2,7 +2,7 @@ import { View, ScrollView } from 'react-native'
 import List from '../../components/accounts/List'
 import { theme } from '../../infrastructure/theme'
 
-const AccountScreen = () => {
+const AccountScreen = ({navigation}) => {
    return (
       <View
          style={{
@@ -11,7 +11,7 @@ const AccountScreen = () => {
          }}
       >
          <ScrollView>
-            <List />
+            <List navigation={navigation}/>
          </ScrollView>
       </View>
    )

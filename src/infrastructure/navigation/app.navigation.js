@@ -1,6 +1,7 @@
 import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import { createStackNavigator } from '@react-navigation/stack'
 
 import { Ionicons } from '@expo/vector-icons'
 import { FontAwesome5 } from '@expo/vector-icons'
@@ -12,8 +13,74 @@ import AddWorkoutExample from '../../services/api/addWorkoutExample.screen'
 import AccountScreen from '../../screens/account/account.screen'
 import StatsScreen from '../../screens/stats/stats.screen'
 import Settings from '../../components/settings/Settings.Screen'
+import NotificationsScreen from '../../screens/account/notifications.screen'
+import DeleteAccountScreen from '../../screens/account/deleteAccount.screen'
+import SecurityScreen from '../../screens/account/security.screen'
+import HelpScreen from '../../screens/account/help.screen'
+import FeedbackScreen from '../../screens/account/feedback.screen'
 
-const Tab = createBottomTabNavigator()
+const Tab = createBottomTabNavigator();
+const Stack = createStackNavigator();
+
+const SettingsStack = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="Account Screen"
+        component={AccountScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="Settings"
+        component={Settings}
+        options={{
+          headerShown: false,
+          title: 'Settings', // You can customize the title here
+        }}
+      />
+      <Stack.Screen
+        name="Notifications"
+        component={NotificationsScreen}
+        options={{
+          headerShown: false,
+          title: 'Notifications', // You can customize the title here
+        }}
+      />
+      <Stack.Screen
+        name="Delete Account"
+        component={DeleteAccountScreen}
+        options={{
+          headerShown: false,
+          title: 'Delete Account', // You can customize the title here
+        }}
+      />
+      <Stack.Screen
+        name="Security and Privacy"
+        component={SecurityScreen}
+        options={{
+          headerShown: false,
+          title: 'Security and Privacy', // You can customize the title here
+        }}
+      />
+      <Stack.Screen
+        name="Help and Support"
+        component={HelpScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="Send Feedback"
+        component={FeedbackScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
+    </Stack.Navigator>
+  );
+};
 
 const TAB_ICONS = {
    Stats: (size, color) => (
@@ -41,7 +108,7 @@ const screenOptions = ({ route }) => ({
    headerShown: false,
 })
 
-const headerOptions = () => ({
+const headerOptions = ({ route, navigation }) => ({
    headerShown: true,
    headerStyle: {
       backgroundColor: theme.colors.background.neutral[0],
@@ -55,16 +122,18 @@ const headerOptions = () => ({
       fontSize: 24,
       fontWeight: 600,
    },
-   headerRight: () => (
-      <Ionicons
-         style={{
-            color: theme.colors.icon.neutral,
-            paddingRight: 17,
-         }}
-         name="settings-outline"
-         size={24}
-      />
-   ),
+   headerRight: () =>
+   route.name === 'Account' ? (
+     <Ionicons
+       style={{
+         color: theme.colors.icon.neutral,
+         paddingRight: 17,
+       }}
+       name="settings-outline"
+       size={24}
+       onPress={() => navigation.navigate('Settings')}
+     />
+   ) : null,
    headerLeft: () => (
       <Ionicons
          style={{
@@ -102,7 +171,7 @@ export const AppNavigator = () => {
 
             <Tab.Screen
                name="Account"
-               component={Settings}
+               component={SettingsStack}
                options={headerOptions}
             />
          </Tab.Navigator>

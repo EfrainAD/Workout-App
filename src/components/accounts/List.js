@@ -9,7 +9,8 @@ import {
 } from '../../infrastructure/styledComponents/styledComonents'
 import { theme } from '../../infrastructure/theme'
 
-const ButtonCard = ({ title }) => {
+
+const ButtonCard = ({ title, navigation }) => {
    return (
       <StyledView>
          <RowView>
@@ -18,13 +19,14 @@ const ButtonCard = ({ title }) => {
                name="arrow-forward-ios"
                size={24}
                color={theme.colors.icon.orange}
+               onPress={() => navigation.navigate(title)}
             />
          </RowView>
       </StyledView>
    )
 }
 
-const List = (props) => {
+const List = ({ navigation }) => {
    const exerciseButtons = [
       { title: 'Edit Exercises' },
       { title: 'Edit Categories' },
@@ -52,22 +54,22 @@ const List = (props) => {
       <View>
          <SectionView>
             {exerciseButtons.map((button, index) => (
-               <ButtonCard key={index} {...button} />
+               <ButtonCard key={index} {...button} navigation={navigation} />
             ))}
          </SectionView>
          <SectionView>
             {profileButtons.map((button, index) => (
-               <ButtonCard key={index} {...button} />
+               <ButtonCard key={index} {...button} navigation={navigation} />
             ))}
          </SectionView>
          <SectionView>
             {notificationButtons.map((button, index) => (
-               <ButtonCard key={index} {...button} />
+               <ButtonCard key={index} {...button} navigation={navigation} />
             ))}
          </SectionView>
          <SectionView>
             {helpSupportButtons.map((button, index) => (
-               <ButtonCard key={index} {...button} />
+               <ButtonCard key={index} {...button} navigation={navigation} />
             ))}
          </SectionView>
       </View>
