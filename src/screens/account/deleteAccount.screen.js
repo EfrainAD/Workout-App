@@ -8,7 +8,7 @@ const DeleteAccountScreen = () => {
    return (
       <SafeArea>
          <CenteredView>
-            <H1>Delete Account</H1>
+            <H1>Are you sure you want to Delete?</H1>
          </CenteredView>
       </SafeArea>
    )

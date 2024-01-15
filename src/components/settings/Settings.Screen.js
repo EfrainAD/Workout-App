@@ -40,27 +40,6 @@ const Settings = (props) => {
             backgroundColor: theme.colors.background.neutral[0],
          }}
       >
-         <View
-         style={{
-            flexDirection: 'row',
-            justifyContent: 'center',
-            alignItems: 'center',
-            paddingLeft: 17,
-            paddingTop: 5,
-            paddingBottom: 20,
-            paddingRight: 17,
-         }}
-      >
-         <Text
-            style={{
-               color: theme.colors.text.neutral,
-               fontSize: 24,
-               fontWeight: 600,
-            }}
-         >
-            Settings
-         </Text>
-      </View>
          <SectionView>
             {settingsButtons.map((button, index) => (
                <ButtonCard key={index} {...button} />

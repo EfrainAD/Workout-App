@@ -26,57 +26,39 @@ const SettingsStack = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="Account Screen"
+        name="Account"
         component={AccountScreen}
-        options={{
-          headerShown: false,
-        }}
+        options={({ route, navigation }) => headerOptions({ route, navigation }, "Account")}
       />
       <Stack.Screen
         name="Settings"
         component={Settings}
-        options={{
-          headerShown: false,
-          title: 'Settings', // You can customize the title here
-        }}
+        options={({ route, navigation }) => headerOptions({ route, navigation })}
       />
       <Stack.Screen
         name="Notifications"
         component={NotificationsScreen}
-        options={{
-          headerShown: false,
-          title: 'Notifications', // You can customize the title here
-        }}
+        options={({ route, navigation }) => headerOptions({ route, navigation })}
       />
       <Stack.Screen
         name="Delete Account"
         component={DeleteAccountScreen}
-        options={{
-          headerShown: false,
-          title: 'Delete Account', // You can customize the title here
-        }}
+        options={({ route, navigation }) => headerOptions({ route, navigation })}
       />
       <Stack.Screen
         name="Security and Privacy"
         component={SecurityScreen}
-        options={{
-          headerShown: false,
-          title: 'Security and Privacy', // You can customize the title here
-        }}
+        options={({ route, navigation }) => headerOptions({ route, navigation })}
       />
       <Stack.Screen
         name="Help and Support"
         component={HelpScreen}
-        options={{
-          headerShown: false,
-        }}
+        options={({ route, navigation }) => headerOptions({ route, navigation })}
       />
       <Stack.Screen
         name="Send Feedback"
         component={FeedbackScreen}
-        options={{
-          headerShown: false,
-        }}
+        options={({ route, navigation }) => headerOptions({ route, navigation })}
       />
     </Stack.Navigator>
   );
@@ -108,8 +90,9 @@ const screenOptions = ({ route }) => ({
    headerShown: false,
 })
 
-const headerOptions = ({ route, navigation }) => ({
+const headerOptions = ({ route, navigation }, title) => ({
    headerShown: true,
+   title: title,
    headerStyle: {
       backgroundColor: theme.colors.background.neutral[0],
       borderBottomColor: 'transparent',
@@ -145,6 +128,7 @@ const headerOptions = ({ route, navigation }) => ({
          }}
          name="ios-arrow-back"
          size={24}
+         onPress={() => navigation.goBack()}
       />
    ),
 })
@@ -172,8 +156,8 @@ export const AppNavigator = () => {
             <Tab.Screen
                name="Account"
                component={SettingsStack}
-               options={headerOptions}
-            />
+               // options={{}}
+               />
          </Tab.Navigator>
       </NavigationContainer>
    )
