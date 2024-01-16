@@ -175,20 +175,20 @@ const AddExercise = () => {
                </StyledView>
 
                {/* Duration Goal  */}
-               <StyledView>
-                  <Controller
-                     control={control}
-                     render={({ field: { onChange, onBlur, value } }) => (
-                        <DurationField
-                           onBlur={onBlur}
-                           onChange={onChange}
-                           onChangeText={onChange}
-                           value={value}
-                        />
-                     )}
-                     name="duration_goal"
-                  />
-               </StyledView>
+               {/* <StyledView> */}
+               <Controller
+                  control={control}
+                  render={({ field: { onChange, onBlur, value } }) => (
+                     <DurationField
+                        onBlur={onBlur}
+                        onChange={onChange}
+                        onChangeText={onChange}
+                        value={value}
+                     />
+                  )}
+                  name="duration_goal"
+               />
+               {/* </StyledView> */}
 
                {/* Description */}
                <StyledView>
