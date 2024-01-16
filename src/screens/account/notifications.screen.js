@@ -1,11 +1,5 @@
 import { View } from 'react-native'
 import { SafeArea } from '../../components/utilities/safeArea.component'
-import {
-   ArrowIcon,
-   CenteredView,
-   H1,
-} from '../../infrastructure/styledComponents/styledComonents'
-import WorkoutList from '../../components/currentWorkouts/WorkoutList'
 import { theme } from '../../infrastructure/theme'
 import SectionHeader from '../../components/screen/SectionHeader'
 import { StyledView, TitleText } from '../../components/currentWorkouts/WorkoutCard.styles'

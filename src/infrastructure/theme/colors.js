@@ -1,11 +1,11 @@
 const tertiary = [
    // shade of lavender or light purple. It's a relatively pale and pastel shade of purple with a hint of blue. This color is often used in design for its soft and calming appearance.
    '#B080FF',
-
    // The color "#FF6E00" is a vivid shade of orange. It is a warm and energetic color often associated with attributes such as enthusiasm, creativity, and warmth
    '#FF9346',
-
    '#FF6E00',
+   // Warning Totamo Red
+   "#FF5959",
 ]
 const neutral = [
    '#2E2E2E',
@@ -16,7 +16,7 @@ const neutral = [
    // "#474747": This color is a medium to dark gray, often used for background elements where a darker but not too heavy shade of gray is needed.
    '#A5A5A5',
    // "#A5A5A5": This is a mid-tone gray, a more neutral and balanced shade of gray. It's often used for various design elements and backgrounds where a neutral and non-distracting color is desired.
-   'EFEFEF',
+   '#EFEFEF',
 ]
 // "EFEFEF": This color is a very light gray, almost white. It's a soft and subtle shade, often used as a neutral background color in design, providing a clean and modern look.
 
@@ -51,6 +51,7 @@ export const colors = {
    },
    text: {
       neutral: '#F7F7F7',
+      warning: tertiary[3]
    },
    borders: {
       neutral: '#A5A5A5',
