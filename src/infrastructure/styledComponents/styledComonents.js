@@ -9,6 +9,10 @@ export const CenteredView = styled.View`
    justify-content: center;
    align-items: center;
 `
+export const Container = styled.View`
+   flex: 1;
+   background-color: ${theme.colors.background.neutral[0]};
+`
 
 export const H1 = styled.Text`
    font-size: ${theme.fontSizes.h1};
@@ -34,6 +38,7 @@ export const RowView = styled(View)`
    flex-direction: row;
    justify-content: space-between;
 `
+
 export const SectionView = styled(View)`
    margin-top: 6px;
    margin-bottom: 6px;

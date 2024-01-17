@@ -9,7 +9,6 @@ import { theme } from './../theme'
 
 import DashboardMain from '../../screens/dashboard/DashboardMain'
 import AddWorkoutExample from '../../services/api/addWorkoutExample.screen'
-
 import AccountScreen from '../../screens/account/account.screen'
 import StatsScreen from '../../screens/stats/stats.screen'
 import Settings from '../../components/settings/Settings.Screen'
@@ -53,7 +52,7 @@ const SettingsStack = () => {
       <Stack.Screen
         name="Help and Support"
         component={HelpScreen}
-        options={({ route, navigation }) => headerOptions({ route, navigation })}
+        options={({ route, navigation }) => headerOptions({ route, navigation }, "Help & Support")}
       />
       <Stack.Screen
         name="Send Feedback"

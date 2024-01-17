@@ -51,6 +51,7 @@ export const colors = {
    },
    text: {
       neutral: '#F7F7F7',
+      description: neutral[3],
       warning: tertiary[3]
    },
    borders: {

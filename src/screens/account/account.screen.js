@@ -1,19 +1,14 @@
-import { View, ScrollView } from 'react-native'
+import { ScrollView } from 'react-native'
 import List from '../../components/accounts/List'
-import { theme } from '../../infrastructure/theme'
+import { Container } from '../../infrastructure/styledComponents/styledComonents'
 
 const AccountScreen = ({navigation}) => {
    return (
-      <View
-         style={{
-            flex: 1,
-            backgroundColor: theme.colors.background.neutral[0],
-         }}
-      >
+      <Container>
          <ScrollView>
             <List navigation={navigation}/>
          </ScrollView>
-      </View>
+      </Container>
    )
 }
 
