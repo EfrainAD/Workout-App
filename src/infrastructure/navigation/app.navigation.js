@@ -84,8 +84,11 @@ const screenOptions = ({ route }) => ({
 
       return iconRenderer(size, color)
    },
-   tabBarActiveTintColor: theme.colors.ui.primary,
+   tabBarActiveTintColor: theme.colors.icon.orange,
    tabBarInactiveTintColor: theme.colors.ui.secondary,
+   tabBarStyle: {
+      backgroundColor: `${theme.colors.background.neutral[0]}`,
+   },
    headerShown: false,
 })
 
@@ -134,8 +137,9 @@ const headerOptions = ({ route, navigation }, title) => ({
 
 export const AppNavigator = () => {
    return (
-      <NavigationContainer>
-         <Tab.Navigator screenOptions={screenOptions}>
+      <NavigationContainer >
+         <Tab.Navigator screenOptions={screenOptions}
+         >
             <Tab.Screen
                name="Stats"
                component={StatsScreen}
