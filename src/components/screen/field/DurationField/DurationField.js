@@ -64,8 +64,7 @@ const styles = StyleSheet.create({
       flexDirection: 'row',
       alignItems: 'center',
       justifyContent: 'center',
-      marginTop: 10,
-      height: 150,
+      height: 200,
    },
    separator: {
       marginHorizontal: 5,

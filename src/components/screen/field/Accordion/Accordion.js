@@ -40,7 +40,7 @@ const Accordion = ({ header, content, height }) => {
    return (
       <View style={styles.container}>
          <TouchableWithoutFeedback onPress={() => toggleAccordion()}>
-            {header}
+            <View style={styles.header}>{header}</View>
          </TouchableWithoutFeedback>
          <Animated.View style={[{ height: bodyHeight }]}>
             <View
@@ -58,23 +58,22 @@ const Accordion = ({ header, content, height }) => {
 
 const styles = StyleSheet.create({
    container: {
-      marginBottom: 20,
+      // marginBottom: 20,
       backgroundColor: theme.colors.background.neutral[2],
       margin: 5,
       marginLeft: 8,
       borderRadius: 20,
+   },
+   header: {
       borderWidth: 1,
       borderColor: theme.colors.borders.neutral,
-      padding: 10,
-      paddingBottom: 10,
-      paddingLeft: 20,
-      overflow: 'hidden',
+      borderRadius: 20,
    },
    pickerContainer: {
       flexDirection: 'row',
       alignItems: 'center',
       justifyContent: 'center',
-      marginTop: 10,
+      // marginTop: 10,
    },
 })
 
