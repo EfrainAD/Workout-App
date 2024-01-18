@@ -2,7 +2,7 @@ import { styled } from 'styled-components'
 import { theme } from '../../infrastructure/theme'
 import { Text, View, TextInput } from 'react-native'
 
-export const ButtonCardStyle =  styled(View)`
+export const ButtonCardStyle = styled(View)`
    background-color: ${theme.colors.background.neutral[2]};
    margin-bottom: 14px;
    margin-left: auto;
@@ -17,21 +17,21 @@ export const ButtonCardStyle =  styled(View)`
 `
 
 export const HelpContainer = styled.View`
-    flex: 1;
-    background-color: ${theme.colors.background.neutral[0]};
+   flex: 1;
+   background-color: ${theme.colors.background.neutral[0]};
 `
 export const ButtonItem = styled(View)`
-    background-color: ${theme.colors.background.neutral[2]};
-    margin: 15px;
-    margin-left: auto;
-    margin-right: auto;
-    border-width: 1px;
-    width: 93%;
-    border-color: ${theme.colors.borders.neutral};
-    border-radius: 20px;
-    padding: 10px;
-    padding-left: 20px;
-    margin-bottom: 5px;
+   background-color: ${theme.colors.background.neutral[2]};
+   margin: 15px;
+   margin-left: auto;
+   margin-right: auto;
+   border-width: 1px;
+   width: 93%;
+   border-color: ${theme.colors.borders.neutral};
+   border-radius: 20px;
+   padding: 10px;
+   padding-left: 20px;
+   margin-bottom: 5px;
 `
 
 export const ButtonRow = styled(View)`
@@ -42,16 +42,16 @@ export const ButtonRow = styled(View)`
    padding-right: 9px;
 `
 export const SearchItem = styled(View)`
-    background-color: ${theme.colors.background.neutral[2]};
-    margin-left: auto;
-    margin-right: auto;
-    width: 84%;
-    border-width: 1px;
-    border-color: ${theme.colors.borders.neutral};
-    border-radius: 20px;
-    padding: 10px;
-    padding-left: 20px;
-    margin-bottom: 25px;
+   background-color: ${theme.colors.background.neutral[2]};
+   margin-left: auto;
+   margin-right: auto;
+   width: 84%;
+   border-width: 1px;
+   border-color: ${theme.colors.borders.neutral};
+   border-radius: 20px;
+   padding: 10px;
+   padding-left: 20px;
+   margin-bottom: 25px;
 `
 export const TitleText = styled(Text)`
    color: ${theme.colors.text.neutral};
@@ -79,9 +79,9 @@ export const SectionRight = styled(Text)`
    margin-right: 8%;
    text-align: right;
 `
-export const ButtonGroup =  styled(View)`
-    margin-top: 15px;
-    margin-bottom: 35px;
+export const ButtonGroup = styled(View)`
+   margin-top: 15px;
+   margin-bottom: 35px;
 `
 
 export const DescriptionText = styled(Text)`

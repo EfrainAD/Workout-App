@@ -13,47 +13,54 @@ const FeedbackScreen = () => {
          style={{
             flex: 1,
             backgroundColor: theme.colors.background.neutral[0],
-            color: 'white'
+            color: 'white',
          }}
       >
-          <Text          
-            style={{ 
-               color: "#FFF",
+         <Text
+            style={{
+               color: '#FFF',
                fontSize: 20,
-               fontStyle: "normal",
+               fontStyle: 'normal',
                fontWeight: 600,
                margin: 24,
-               height: "normal"}}
-         >Send a Message</Text>
-<View style={{
-  borderColor: "#A5A5A5",
-  borderWidth: 1,
-  borderRadius: 20, // Optional: You can add border radius for rounded corners
-  padding: 12,
-  margin: 12,
-}}>
-  <TextInput
-    placeholder="Add a Way to contact you here"
-    placeholderTextColor="#A5A5A5"
-    style={{ 
-      color: "#A5A5A5",
-      fontSize: 18,
-      fontStyle: "normal",
-      fontWeight: 600,
-    }}
-  />
-</View>
+               height: 'normal',
+            }}
+         >
+            Send a Message
+         </Text>
+         <View
+            style={{
+               borderColor: '#A5A5A5',
+               borderWidth: 1,
+               borderRadius: 20, // Optional: You can add border radius for rounded corners
+               padding: 12,
+               margin: 12,
+            }}
+         >
+            <TextInput
+               placeholder="Add a Way to contact you here"
+               placeholderTextColor="#A5A5A5"
+               style={{
+                  color: '#A5A5A5',
+                  fontSize: 18,
+                  fontStyle: 'normal',
+                  fontWeight: 600,
+               }}
+            />
+         </View>
 
-          <TextInput
-            style={{ 
-               color: "#A5A5A5",
+         <TextInput
+            style={{
+               color: '#A5A5A5',
                fontSize: 18,
-               fontStyle: "normal",
+               fontStyle: 'normal',
                fontWeight: 600,
                margin: 31,
-               height: "normal"}}
-          >Add your message here</TextInput>
-
+               height: 'normal',
+            }}
+         >
+            Add your message here
+         </TextInput>
       </View>
    )
 }

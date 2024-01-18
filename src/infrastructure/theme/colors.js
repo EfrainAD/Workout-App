@@ -5,7 +5,7 @@ const tertiary = [
    '#FF9346',
    '#FF6E00',
    // Warning Totamo Red
-   "#FF5959",
+   '#FF5959',
 ]
 const neutral = [
    '#2E2E2E',
@@ -52,7 +52,7 @@ export const colors = {
    text: {
       neutral: '#F7F7F7',
       description: neutral[3],
-      warning: tertiary[3]
+      warning: tertiary[3],
    },
    borders: {
       neutral: '#A5A5A5',

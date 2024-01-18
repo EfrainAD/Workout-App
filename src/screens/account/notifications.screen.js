@@ -1,7 +1,10 @@
 import { Container } from '../../infrastructure/styledComponents/styledComonents'
 import { SafeArea } from '../../components/utilities/safeArea.component'
 import SectionHeader from '../../components/screen/SectionHeader'
-import { StyledView, TitleText } from '../../components/currentWorkouts/WorkoutCard.styles'
+import {
+   StyledView,
+   TitleText,
+} from '../../components/currentWorkouts/WorkoutCard.styles'
 import { RowView } from '../../components/settings/Settings.Screen.styles'
 
 const NotificationsScreen = () => {

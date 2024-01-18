@@ -9,7 +9,6 @@ import {
 } from '../../infrastructure/styledComponents/styledComonents'
 import { theme } from '../../infrastructure/theme'
 
-
 const ButtonCard = ({ title, navigation }) => {
    return (
       <StyledView>

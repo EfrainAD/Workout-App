@@ -33,19 +33,19 @@ const Settings = (props) => {
    ]
 
    return (
-      <SafeArea >
-      <View
-         style={{
-            flex: 1,
-            backgroundColor: theme.colors.background.neutral[0],
-         }}
-      >
-         <SectionView>
-            {settingsButtons.map((button, index) => (
-               <ButtonCard key={index} {...button} />
-            ))}
-         </SectionView>
-      </View>
+      <SafeArea>
+         <View
+            style={{
+               flex: 1,
+               backgroundColor: theme.colors.background.neutral[0],
+            }}
+         >
+            <SectionView>
+               {settingsButtons.map((button, index) => (
+                  <ButtonCard key={index} {...button} />
+               ))}
+            </SectionView>
+         </View>
       </SafeArea>
    )
 }

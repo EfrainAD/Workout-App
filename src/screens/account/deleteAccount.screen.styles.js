@@ -50,29 +50,28 @@ export const CustomButton = styled(TouchableOpacity)`
    padding: 10px;
    border-radius: 5px;
    justify-content: center;
-`;
+`
 
 export const YesButtonText = styled(Text)`
    color: ${theme.colors.text.neutral};
    font-size: 14px;
    font-weight: 600;
-`;
+`
 
 export const NoButtonText = styled(Text)`
    color: ${theme.colors.text.neutral};
    font-size: 14px;
    font-weight: 600;
-`;
+`
 
 export const StyledYesButton = styled(CustomButton)`
-   background-color: #FF4D4D;
-   border: 1px solid #F4B2B2;
+   background-color: #ff4d4d;
+   border: 1px solid #f4b2b2;
    border-radius: 20px;
    padding: 15px;
-`;
+`
 export const StyledButton = styled(CustomButton)`
    border: 1px solid white;
    border-radius: 20px;
    padding: 15px;
-`;
-
+`

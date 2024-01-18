@@ -18,50 +18,64 @@ import SecurityScreen from '../../screens/account/security.screen'
 import HelpScreen from '../../screens/account/help.screen'
 import FeedbackScreen from '../../screens/account/feedback.screen'
 
-const Tab = createBottomTabNavigator();
-const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator()
+const Stack = createStackNavigator()
 
 const SettingsStack = () => {
-  return (
-    <Stack.Navigator>
-      <Stack.Screen
-        name="Account"
-        component={AccountScreen}
-        options={({ route, navigation }) => headerOptions({ route, navigation }, "Account")}
-      />
-      <Stack.Screen
-        name="Settings"
-        component={Settings}
-        options={({ route, navigation }) => headerOptions({ route, navigation })}
-      />
-      <Stack.Screen
-        name="Notifications"
-        component={NotificationsScreen}
-        options={({ route, navigation }) => headerOptions({ route, navigation })}
-      />
-      <Stack.Screen
-        name="Delete Account"
-        component={DeleteAccountScreen}
-        options={({ route, navigation }) => headerOptions({ route, navigation })}
-      />
-      <Stack.Screen
-        name="Security and Privacy"
-        component={SecurityScreen}
-        options={({ route, navigation }) => headerOptions({ route, navigation })}
-      />
-      <Stack.Screen
-        name="Help and Support"
-        component={HelpScreen}
-        options={({ route, navigation }) => headerOptions({ route, navigation }, "Help & Support")}
-      />
-      <Stack.Screen
-        name="Send Feedback"
-        component={FeedbackScreen}
-        options={({ route, navigation }) => headerOptions({ route, navigation })}
-      />
-    </Stack.Navigator>
-  );
-};
+   return (
+      <Stack.Navigator>
+         <Stack.Screen
+            name="AccountScreen"
+            component={AccountScreen}
+            options={({ route, navigation }) =>
+               headerOptions({ route, navigation }, 'Account')
+            }
+         />
+         <Stack.Screen
+            name="Settings"
+            component={Settings}
+            options={({ route, navigation }) =>
+               headerOptions({ route, navigation })
+            }
+         />
+         <Stack.Screen
+            name="Notifications"
+            component={NotificationsScreen}
+            options={({ route, navigation }) =>
+               headerOptions({ route, navigation })
+            }
+         />
+         <Stack.Screen
+            name="Delete Account"
+            component={DeleteAccountScreen}
+            options={({ route, navigation }) =>
+               headerOptions({ route, navigation })
+            }
+         />
+         <Stack.Screen
+            name="Security and Privacy"
+            component={SecurityScreen}
+            options={({ route, navigation }) =>
+               headerOptions({ route, navigation }, 'Security and Privacy')
+            }
+         />
+         <Stack.Screen
+            name="Help and Support"
+            component={HelpScreen}
+            options={({ route, navigation }) =>
+               headerOptions({ route, navigation }, 'Help & Support')
+            }
+         />
+         <Stack.Screen
+            name="Send Feedback"
+            component={FeedbackScreen}
+            options={({ route, navigation }) =>
+               headerOptions({ route, navigation })
+            }
+         />
+      </Stack.Navigator>
+   )
+}
 
 const TAB_ICONS = {
    Stats: (size, color) => (
@@ -103,43 +117,43 @@ const headerOptions = ({ route, navigation }, title) => ({
       elevation: 0,
    },
    headerTitleStyle: {
-      color: theme.colors.text.neutral, // Set your desired text color
-      fontSize: 24,
+      color: theme.colors.text.neutral,
+      fontSize: 23,
       fontWeight: 600,
    },
    headerRight: () =>
-   route.name === 'Account' ? (
-     <Ionicons
-       style={{
-         color: theme.colors.icon.neutral,
-         paddingRight: 17,
-       }}
-       name="settings-outline"
-       size={24}
-       onPress={() => navigation.navigate('Settings')}
-     />
-   ) : null,
-   headerLeft: () => (
-      <Ionicons
-         style={{
-            color: theme.colors.icon.neutral,
-            fontWeight: 600,
-            paddingLeft: 17,
-            paddingTop: 5,
-            paddingBottom: 20,
-         }}
-         name="ios-arrow-back"
-         size={24}
-         onPress={() => navigation.goBack()}
-      />
-   ),
+      route.name === 'AccountScreen' ? (
+         <Ionicons
+            style={{
+               color: theme.colors.icon.neutral,
+               paddingRight: 17,
+            }}
+            name="settings-outline"
+            size={24}
+            onPress={() => navigation.navigate('Settings')}
+         />
+      ) : null,
+   headerLeft: () =>
+      route.name !== 'AccountScreen' ? (
+         <Ionicons
+            style={{
+               color: theme.colors.icon.neutral,
+               fontWeight: 600,
+               paddingLeft: 17,
+               paddingTop: 5,
+               paddingBottom: 20,
+            }}
+            name="ios-arrow-back"
+            size={24}
+            onPress={() => navigation.goBack()}
+         />
+      ) : null,
 })
 
 export const AppNavigator = () => {
    return (
-      <NavigationContainer >
-         <Tab.Navigator screenOptions={screenOptions}
-         >
+      <NavigationContainer>
+         <Tab.Navigator screenOptions={screenOptions}>
             <Tab.Screen
                name="Stats"
                component={StatsScreen}
@@ -155,12 +169,7 @@ export const AppNavigator = () => {
                component={DashboardMain}
                options={headerOptions}
             />
-
-            <Tab.Screen
-               name="Account"
-               component={SettingsStack}
-               // options={{}}
-               />
+            <Tab.Screen name="Account" component={SettingsStack} />
          </Tab.Navigator>
       </NavigationContainer>
    )
