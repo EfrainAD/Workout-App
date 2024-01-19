@@ -59,6 +59,7 @@ export const colors = {
          placeholderValue: neutral[3],
          notSelected: tertiary[0],
       },
+      durationDigit: tertiary[2],
    },
    borders: {
       neutral: neutral[3],
