@@ -34,9 +34,6 @@ const List = ({ navigation }) => {
       { title: 'Weight (lb / kg)' },
       { title: 'Set a Goal' },
       { title: 'Set a Challenge' },
-      { title: 'Edit Categories' },
-      { title: 'Edit Categories' },
-      { title: 'Edit Categories' },
    ]
    const profileButtons = [{ title: 'My Profile' }, { title: 'My Trophies' }]
    const notificationButtons = [
