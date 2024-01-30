@@ -1,17 +1,11 @@
 import { SafeArea } from '../../components/utilities/safeArea.component'
-import {
-   H1,
-   Container,
-} from '../../infrastructure/styledComponents/styledComonents'
+import {Container} from '../../infrastructure/styledComponents/styledComonents'
 import SectionHeader from '../../components/screen/SectionHeader'
-// import { StyledView, TitleText } from '../../components/currentWorkouts/WorkoutCard.styles'
-// import { RowView } from '../../components/settings/Settings.Screen.styles'
 import {
    StyledView,
    RowView,
    TitleText,
    ArrowIcon,
-   SectionView,
 } from '../../infrastructure/styledComponents/styledComonents'
 import { theme } from '../../infrastructure/theme'
 
@@ -24,7 +18,7 @@ const ButtonCard = ({ title, navigation }) => {
                name="arrow-forward-ios"
                size={24}
                color={theme.colors.icon.orange}
-               onPress={() => navigation.goBack()}
+               onPress={() => navigation.navigate(title)}
             />
          </RowView>
       </StyledView>

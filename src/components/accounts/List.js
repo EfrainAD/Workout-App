@@ -27,8 +27,10 @@ const ButtonCard = ({ title, navigation }) => {
 
 const List = ({ navigation }) => {
    const exerciseButtons = [
+      { title: 'Exercises' },
       { title: 'Edit Exercises' },
       { title: 'Edit Categories' },
+      { title: 'Categories' },
       { title: 'Edit Workouts' },
       { title: 'Workout History Log' },
       { title: 'Weight (lb / kg)' },

@@ -12,11 +12,13 @@ import AddWorkoutExample from '../../services/api/addWorkoutExample.screen'
 import AccountScreen from '../../screens/account/account.screen'
 import StatsScreen from '../../screens/stats/stats.screen'
 import Settings from '../../components/settings/Settings.Screen'
+import ExercisesScreen from '../../screens/exercise/exercises.screens'
 import NotificationsScreen from '../../screens/account/notifications.screen'
 import DeleteAccountScreen from '../../screens/account/deleteAccount.screen'
 import SecurityScreen from '../../screens/account/security.screen'
 import HelpScreen from '../../screens/account/help.screen'
 import FeedbackScreen from '../../screens/account/feedback.screen'
+import ChangePasswordScreen from '../../screens/account/changePassword.screen copy 2'
 
 const Tab = createBottomTabNavigator()
 const Stack = createStackNavigator()
@@ -34,6 +36,20 @@ const SettingsStack = () => {
          <Stack.Screen
             name="Settings"
             component={Settings}
+            options={({ route, navigation }) =>
+               headerOptions({ route, navigation })
+            }
+         />
+         <Stack.Screen
+            name="Exercises"
+            component={ExercisesScreen}
+            options={({ route, navigation }) =>
+               headerOptions({ route, navigation })
+            }
+         />
+         <Stack.Screen
+            name="Change Password"
+            component={ChangePasswordScreen}
             options={({ route, navigation }) =>
                headerOptions({ route, navigation })
             }

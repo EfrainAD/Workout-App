@@ -1,15 +1,13 @@
 import { SafeArea } from '../../components/utilities/safeArea.component'
-import {
-   CenteredView,
-   H1,
-} from '../../infrastructure/styledComponents/styledComonents'
+import {Container} from '../../infrastructure/styledComponents/styledComonents'
+import ButtonItem from '../../components/screen/button/ButtonItem'
 
-const ExercisesScreen = () => {
+const ExercisesScreen = ({ navigation }) => {
    return (
       <SafeArea>
-         <CenteredView>
-            <H1>Workouts</H1>
-         </CenteredView>
+         <Container>
+            <ButtonItem title="Crunches" navigation={navigation} />
+         </Container>
       </SafeArea>
    )
 }
