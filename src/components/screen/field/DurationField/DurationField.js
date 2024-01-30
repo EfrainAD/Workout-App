@@ -33,14 +33,14 @@ const DurationField = ({ onChange }) => {
                   setValue={setMinutes}
                   range={60}
                />
-               <Text style={styles.separator}>m</Text>
+               {/* <Text style={styles.separator}>m</Text> */}
                <WheelPicker
                   label={'Seconds'}
                   value={seconds}
                   setValue={setSeconds}
                   range={60}
                />
-               <Text style={styles.separator}>s</Text>
+               {/* <Text style={styles.separator}>s</Text> */}
             </View>
          }
          height={200}

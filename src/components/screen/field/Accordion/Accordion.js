@@ -42,7 +42,7 @@ const Accordion = ({ header, content, height }) => {
          <TouchableWithoutFeedback onPress={() => toggleAccordion()}>
             <View style={styles.header}>{header}</View>
          </TouchableWithoutFeedback>
-         <Animated.View style={[{ height: bodyHeight }]}>
+         <Animated.View style={[{ height: bodyHeight, overflow: 'hidden' }]}>
             <View
                style={[styles.pickerContainer, { height }]}
                onLayout={(event) =>
