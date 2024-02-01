@@ -44,7 +44,7 @@ const Accordion = ({ header, content, height }) => {
          </TouchableWithoutFeedback>
          <Animated.View style={[{ height: bodyHeight, overflow: 'hidden' }]}>
             <View
-               style={[styles.pickerContainer, { height }]}
+               style={{ height }}
                onLayout={(event) =>
                   setBodySectionHeight(event.nativeEvent.layout.height)
                }
@@ -58,7 +58,6 @@ const Accordion = ({ header, content, height }) => {
 
 const styles = StyleSheet.create({
    container: {
-      // marginBottom: 20,
       backgroundColor: theme.colors.background.neutral[2],
       margin: 5,
       marginLeft: 8,
@@ -68,12 +67,6 @@ const styles = StyleSheet.create({
       borderWidth: 1,
       borderColor: theme.colors.borders.neutral,
       borderRadius: 20,
-   },
-   pickerContainer: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      justifyContent: 'center',
-      // marginTop: 10,
    },
 })
 

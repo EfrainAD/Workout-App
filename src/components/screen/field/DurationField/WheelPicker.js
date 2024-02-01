@@ -6,6 +6,7 @@ import {
    ScrollView,
    TouchableOpacity,
 } from 'react-native'
+import { theme } from '../../../../infrastructure/theme'
 
 const WheelPicker = ({ label, value, setValue, range }) => {
    const scrollRef = useRef(null)
@@ -60,8 +61,6 @@ const WheelPicker = ({ label, value, setValue, range }) => {
       <View style={styles.wheelContainer}>
          <View
             style={{
-               flexDirection: 'row',
-               // justifyContent: 'center',
                alignItems: 'center',
             }}
          >
@@ -70,6 +69,7 @@ const WheelPicker = ({ label, value, setValue, range }) => {
                onScrollEndDrag={handleScroll}
                onMomentumScrollEnd={handleScroll}
                contentContainerStyle={styles.wheelContent}
+               showsVerticalScrollIndicator={false}
             >
                {Array.from({ length: range }, (_, i) => (
                   <View key={i} style={styles.wheelItem}>
@@ -77,42 +77,51 @@ const WheelPicker = ({ label, value, setValue, range }) => {
                   </View>
                ))}
             </ScrollView>
-            <Text style={{ marginHorizontal: 5 }}>{'\u2190'}</Text>
-         </View>
-         <TouchableOpacity onPress={() => scrollToValue(value)}>
             <View style={styles.wheelLabel}>
-               <Text>{label}</Text>
+               <Text style={styles.textLabel}>{label}</Text>
             </View>
-         </TouchableOpacity>
+         </View>
+         <View style={styles.arrowContainer}>
+            <Text style={styles.arrow}>{'\u2190'}</Text>
+         </View>
       </View>
    )
 }
 
 const styles = StyleSheet.create({
    wheelContainer: {
-      flexDirection: 'column',
-      alignItems: 'center',
-      marginHorizontal: 10,
+      height: 140,
    },
    wheelContent: {
-      textAlign: 'center',
-      paddingTop: 50,
-      paddingBottom: 100,
-      marginTop: 25,
+      paddingVertical: 50,
+      paddingHorizontal: 25,
    },
    wheelItem: {
       width: 50,
       height: 50,
       justifyContent: 'center',
       alignItems: 'center',
-      // borderWidth: 1,
-      // borderColor: 'black',
    },
    wheelItemText: {
-      fontSize: 16,
+      fontSize: 20,
+      color: theme.colors.text.neutral,
    },
    wheelLabel: {
-      // marginTop: 10,
+      marginTop: 15,
+   },
+   textLabel: {
+      fontSize: 20,
+      color: theme.colors.text.neutral,
+   },
+   arrowContainer: {
+      position: 'absolute',
+      top: '44%',
+      right: '0%',
+      pointerEvents: 'none',
+   },
+   arrow: {
+      fontSize: 23,
+      color: theme.colors.text.durationDigit,
    },
 })
 

@@ -33,17 +33,15 @@ const DurationField = ({ onChange }) => {
                   setValue={setMinutes}
                   range={60}
                />
-               {/* <Text style={styles.separator}>m</Text> */}
                <WheelPicker
                   label={'Seconds'}
                   value={seconds}
                   setValue={setSeconds}
                   range={60}
                />
-               {/* <Text style={styles.separator}>s</Text> */}
             </View>
          }
-         height={200}
+         height={210}
       />
    )
 }
@@ -64,13 +62,10 @@ const styles = StyleSheet.create({
       color: theme.colors.text.durationDigit,
    },
    pickerContainer: {
+      flex: 1,
       flexDirection: 'row',
-      alignItems: 'center',
-      justifyContent: 'center',
-      height: 200,
-   },
-   separator: {
-      marginHorizontal: 5,
+      paddingTop: 15,
+      justifyContent: 'space-evenly',
    },
 })
 
